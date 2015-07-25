@@ -81,6 +81,84 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/07/25/studio解决gradle和sdk更新问题/" title="studio解决gradle和sdk更新问题" itemprop="url">studio解决gradle和sdk更新问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-25T01:40:17.000Z" itemprop="datePublished"> 发表于 2015-07-25</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>之前一直用Eclipse作为开发工具，但随着Google的大力推动和Studio的不断完善，Studio的地位已经越来越高，github上大部分的项目都已经采用了Studio作为开发工具，为了更好的学习，最近开始接触使用Studio。<br>Android Studio作为一个官方推出的开发工具确实有其优势，集成了源码库，一行库引用就可以加载编译，确实简单实用，但作为一名天朝的开发人员，我只能呵呵了，初用Studio的感觉就是这都是什么鬼 Maven连不上 JCenter连不上 Android Studio无法升级 Gradle无法同步，顿时感觉一万头羊驼向你蹦来<br>看来想用好Studio第一步就是要解决翻墙问题</p>
+<h3 id="Host">Host</h3><p>第一个想到的解决办法就是修改Host,记得原来收藏过一个不断更新Host的网址，翻出来<a href="http://levi.yii.so/archives/3553" target="_blank" rel="external">http://levi.yii.so/archives/3553</a>，该博客博主乱炖不仅定期更新host文件和一些免费的VPN，而且也包含了很多技术方面的知识，你值得收藏。<br>host修改的优点是简单方便，缺点需要不断的更新</p>
+<h3 id="SDK国内镜像站">SDK国内镜像站</h3><p>说道这里就不得不提<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">androiddevtools</a>,绝对是天朝Android开发人员必收藏的网址，里面包含了Android开发所需的各种开发工具和sdk更新镜像地址。使用国内镜像地址可以解决sdk更新问题，配置方法在<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">androiddevtools</a>里面可以找到。<br>但是gradle的同步和JCenter库连不上不能解决</p>
+<h3 id="红杏翻墙">红杏翻墙</h3><p>红杏翻墙提供了一个公益代理<a href="http://hx.gy:1080，该代理只包含开发人员所需的域名，所以只能作为开发人员专用，这是红杏免费提供给开发人员。红杏公益代理可以解决Android" target="_blank" rel="external">http://hx.gy:1080，该代理只包含开发人员所需的域名，所以只能作为开发人员专用，这是红杏免费提供给开发人员。红杏公益代理可以解决Android</a> Studio开发更新的所有问题。</p>
+<ol>
+<li>github加速<blockquote>
+<p>git config —global http.proxy <a href="http://hx.gy:1080" target="_blank" rel="external">http://hx.gy:1080</a></p>
+</blockquote>
+</li>
+<li>更新sdk<blockquote>
+<p>Android SDK Manager Tools-&gt;options设计红杏代理</p>
+</blockquote>
+</li>
+<li><p>设置Android Studio代理，解决Jcenter和Gradle更新同步</p>
+<blockquote>
+<p>setting-&gt;Appearance&amp;Behavior-&gt;system setting-&gt;Http proxy 设置红杏代理，这样就可以下载gradle或者其他依赖了。</p>
+</blockquote>
+<p>  <img src="http://7xkmon.com1.z0.glb.clouddn.com/QQ截图20150725104457.png" alt="" width="400px"></p>
+</li>
+</ol>
+<p>ps.除了公益代理，红杏翻墙也是非常不错的，价格便宜、使用稳定方便,速度快，推荐使用。推荐链接<a href="http://honx.in/_Va72OSZDj1034LfB" target="_blank" rel="external">http://honx.in/_Va72OSZDj1034LfB</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/07/25/studio解决gradle和sdk更新问题/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/25/studio解决gradle和sdk更新问题/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/07/24/博客之旅/" title="开启博客之旅" itemprop="url">开启博客之旅</a>
   </h1>
   <p class="article-author">By
@@ -211,6 +289,10 @@
 <div class="categorieslist">
 	<p class="asidetitle">分类</p>
 		<ul>
+		
+		  
+			<li><a href="/categories/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
+		  
 		
 		  
 			<li><a href="/categories/hexo/" title="hexo">hexo<sup>1</sup></a></li>
