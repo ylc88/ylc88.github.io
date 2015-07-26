@@ -81,6 +81,108 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/07/26/centos连接无线网/" title="Centos连接无线网" itemprop="url">Centos连接无线网</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-26T04:45:11.000Z" itemprop="datePublished"> 发表于 2015-07-26</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络</p>
+<blockquote>
+<p>cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容<br>HWADDR=00:0C:29:8D:24:73<br>TYPE=Ethernet<br>BOOTPROTO=static  #启用静态IP地址<br>DEFROUTE=yes<br>PEERDNS=yes<br>PEERROUTES=yes<br>IPV4_FAILURE_FATAL=no<br>IPV6INIT=yes<br>IPV6_AUTOCONF=yes<br>IPV6_DEFROUTE=yes<br>IPV6_PEERDNS=yes<br>IPV6_PEERROUTES=yes<br>IPV6_FAILURE_FATAL=no<br>NAME=eno16777736<br>UUID=ae0965e7-22b9-45aa-8ec9-3f0a20a85d11<br>ONBOOT=yes  #开启自动启用网络连接<br>IPADDR0=192.168.0.168  #设置IP地址<br>PREFIXO0=24  #设置子网掩码   不要设置 255.255.255.0<br>GATEWAY0=192.168.0.1  #设置网关<br>DNS1=8.8.8.8  #设置主DNS，不要设置自己所在区的dns，我配置过，不行<br>DNS2=8.8.4.4  #设置备DNS</p>
+</blockquote>
+<p>配置完之后重启网络服务 </p>
+<blockquote>
+<p>service network restart   </p>
+</blockquote>
+<p>如果网络没有连上 reboot重启</p>
+<p>安装ifconfig</p>
+<blockquote>
+<p>yum install -y net-tools*</p>
+</blockquote>
+<p>安装完之后 ifconfig查看网卡信息，发现只有一个有线网卡enp8s0和一个回路lo<br>查啊查，发现要NetworkManager服务没有开，泪奔</p>
+<blockquote>
+<p>service NetworkManager start</p>
+</blockquote>
+<p>启动服务，终于多出了一块无线网卡，以防万一，确保此网卡接口启动执行命令</p>
+<blockquote>
+<p>sudo ip link set wlan0 up</p>
+</blockquote>
+<p>扫描附近的无线网络</p>
+<blockquote>
+<p>sudo iw dev wlan0 scan | less </p>
+</blockquote>
+<p>连接没有加密的网络</p>
+<blockquote>
+<p>sudo iw dev wlan0 connect [网络 SSID]</p>
+</blockquote>
+<p>连接没有加密的网络wep加密网络</p>
+<blockquote>
+<p>sudo iw dev wlan0 connect [网络 SSID] key 0:[WEP 密钥]</p>
+</blockquote>
+<p>连接WPA或WPA2协议的话比较麻烦，需要修改/etc/wpasupplicant/wpa_supplicant.conf文件，增加如下行</p>
+<blockquote>
+<p>network={    ssid=”[网络 ssid]”    psk=”[密码]”    priority=1}</p>
+</blockquote>
+<p>配置文件修改完成后</p>
+<blockquote>
+<p>sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf</p>
+</blockquote>
+<p>获取 IP 地址</p>
+<blockquote>
+<p>sudo dhcpcd wlan0</p>
+</blockquote>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Linux/">Linux</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/07/26/centos连接无线网/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/26/centos连接无线网/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/07/25/studio解决gradle和sdk更新问题/" title="Android Studio解决gradle和sdk更新问题" itemprop="url">Android Studio解决gradle和sdk更新问题</a>
   </h1>
   <p class="article-author">By
@@ -292,6 +394,10 @@
 		
 		  
 			<li><a href="/categories/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>1</sup></a></li>
 		  
 		
 		  

@@ -4,24 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Android Studio解决gradle和sdk更新问题 | yanlc的博客</title>
+    <title>Centos连接无线网 | yanlc的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yanlc">
     
 
     
-    <meta name="description" content="之前一直用Eclipse作为开发工具，但随着Google的大力推动和Studio的不断完善，Studio的地位已经越来越高，github上大部分的项目都已经采用了Studio作为开发工具，为了更好的学习，最近开始接触使用Studio。Android Studio作为一个官方推出的开发工具确实有其优势，集成了源码库，一行库引用就可以加载编译，确实简单实用，但作为一名天朝的开发人员，我只能呵呵了，初用">
+    <meta name="description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
+
+cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio解决gradle和sdk更新问题">
-<meta property="og:url" content="http://yoursite.com/2015/07/25/studio解决gradle和sdk更新问题/index.html">
+<meta property="og:title" content="Centos连接无线网">
+<meta property="og:url" content="http://yoursite.com/2015/07/26/centos连接无线网/index.html">
 <meta property="og:site_name" content="yanlc的博客">
-<meta property="og:description" content="之前一直用Eclipse作为开发工具，但随着Google的大力推动和Studio的不断完善，Studio的地位已经越来越高，github上大部分的项目都已经采用了Studio作为开发工具，为了更好的学习，最近开始接触使用Studio。Android Studio作为一个官方推出的开发工具确实有其优势，集成了源码库，一行库引用就可以加载编译，确实简单实用，但作为一名天朝的开发人员，我只能呵呵了，初用">
-<meta property="og:image" content="http://7xkmon.com1.z0.glb.clouddn.com/QQ截图20150725104457.png">
-<meta property="og:updated_time" content="2015-07-25T03:44:06.881Z">
+<meta property="og:description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
+
+cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
+<meta property="og:updated_time" content="2015-07-26T05:23:13.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio解决gradle和sdk更新问题">
-<meta name="twitter:description" content="之前一直用Eclipse作为开发工具，但随着Google的大力推动和Studio的不断完善，Studio的地位已经越来越高，github上大部分的项目都已经采用了Studio作为开发工具，为了更好的学习，最近开始接触使用Studio。Android Studio作为一个官方推出的开发工具确实有其优势，集成了源码库，一行库引用就可以加载编译，确实简单实用，但作为一名天朝的开发人员，我只能呵呵了，初用">
+<meta name="twitter:title" content="Centos连接无线网">
+<meta name="twitter:description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
+
+cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
 
     
     <link rel="alternative" href="/atom.xml" title="yanlc的博客" type="application/atom+xml">
@@ -81,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/25/studio解决gradle和sdk更新问题/" title="Android Studio解决gradle和sdk更新问题" itemprop="url">Android Studio解决gradle和sdk更新问题</a>
+      <a href="/2015/07/26/centos连接无线网/" title="Centos连接无线网" itemprop="url">Centos连接无线网</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-25T01:40:17.000Z" itemprop="datePublished"> 发表于 2015-07-25</time>
+    <time datetime="2015-07-26T04:45:11.000Z" itemprop="datePublished"> 发表于 2015-07-26</time>
     
   </p>
 </header>
@@ -97,31 +102,55 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Host"><span class="toc-number">1.</span> <span class="toc-text">Host</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDK国内镜像站"><span class="toc-number">2.</span> <span class="toc-text">SDK国内镜像站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#红杏翻墙"><span class="toc-number">3.</span> <span class="toc-text">红杏翻墙</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>之前一直用Eclipse作为开发工具，但随着Google的大力推动和Studio的不断完善，Studio的地位已经越来越高，github上大部分的项目都已经采用了Studio作为开发工具，为了更好的学习，最近开始接触使用Studio。<br>Android Studio作为一个官方推出的开发工具确实有其优势，集成了源码库，一行库引用就可以加载编译，确实简单实用，但作为一名天朝的开发人员，我只能呵呵了，初用Studio的感觉就是这都是什么鬼 Maven连不上 JCenter连不上 Android Studio无法升级 Gradle无法同步，顿时感觉一万头羊驼向你蹦来<br>看来想用好Studio第一步就是要解决翻墙问题</p>
-<h3 id="Host">Host</h3><p>第一个想到的解决办法就是修改Host,记得原来收藏过一个不断更新Host的网址，翻出来<a href="http://levi.yii.so/archives/3553" target="_blank" rel="external">http://levi.yii.so/archives/3553</a>，该博客博主乱炖不仅定期更新host文件和一些免费的VPN，而且也包含了很多技术方面的知识，你值得收藏。<br>host修改的优点是简单方便，缺点需要不断的更新</p>
-<h3 id="SDK国内镜像站">SDK国内镜像站</h3><p>说道这里就不得不提<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">androiddevtools</a>,绝对是天朝Android开发人员必收藏的网址，里面包含了Android开发所需的各种开发工具和sdk更新镜像地址。使用国内镜像地址可以解决sdk更新问题，配置方法在<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">androiddevtools</a>里面可以找到。<br>但是gradle的同步和JCenter库连不上不能解决</p>
-<h3 id="红杏翻墙">红杏翻墙</h3><p>红杏翻墙提供了一个公益代理<a href="http://hx.gy:1080，该代理只包含开发人员所需的域名，所以只能作为开发人员专用，这是红杏免费提供给开发人员。红杏公益代理可以解决Android" target="_blank" rel="external">http://hx.gy:1080，该代理只包含开发人员所需的域名，所以只能作为开发人员专用，这是红杏免费提供给开发人员。红杏公益代理可以解决Android</a> Studio开发更新的所有问题。</p>
-<ol>
-<li>github加速<blockquote>
-<p>git config —global http.proxy <a href="http://hx.gy:1080" target="_blank" rel="external">http://hx.gy:1080</a></p>
-</blockquote>
-</li>
-<li>更新sdk<blockquote>
-<p>Android SDK Manager Tools-&gt;options设计红杏代理</p>
-</blockquote>
-</li>
-<li><p>设置Android Studio代理，解决Jcenter和Gradle更新同步</p>
+		<p>今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络</p>
 <blockquote>
-<p>setting-&gt;Appearance&amp;Behavior-&gt;system setting-&gt;Http proxy 设置红杏代理，这样就可以下载gradle或者其他依赖了。</p>
+<p>cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容<br>HWADDR=00:0C:29:8D:24:73<br>TYPE=Ethernet<br>BOOTPROTO=static  #启用静态IP地址<br>DEFROUTE=yes<br>PEERDNS=yes<br>PEERROUTES=yes<br>IPV4_FAILURE_FATAL=no<br>IPV6INIT=yes<br>IPV6_AUTOCONF=yes<br>IPV6_DEFROUTE=yes<br>IPV6_PEERDNS=yes<br>IPV6_PEERROUTES=yes<br>IPV6_FAILURE_FATAL=no<br>NAME=eno16777736<br>UUID=ae0965e7-22b9-45aa-8ec9-3f0a20a85d11<br>ONBOOT=yes  #开启自动启用网络连接<br>IPADDR0=192.168.0.168  #设置IP地址<br>PREFIXO0=24  #设置子网掩码   不要设置 255.255.255.0<br>GATEWAY0=192.168.0.1  #设置网关<br>DNS1=8.8.8.8  #设置主DNS，不要设置自己所在区的dns，我配置过，不行<br>DNS2=8.8.4.4  #设置备DNS</p>
 </blockquote>
-<p>  <img src="http://7xkmon.com1.z0.glb.clouddn.com/QQ截图20150725104457.png" alt="" width="400px"></p>
-</li>
-</ol>
-<p>ps.除了公益代理，红杏翻墙也是非常不错的，价格便宜、使用稳定方便,速度快，推荐使用。推荐链接<a href="http://honx.in/_Va72OSZDj1034LfB" target="_blank" rel="external">http://honx.in/_Va72OSZDj1034LfB</a><br>   博主原创，转载注明出处<a href="http://ylc88.github.io" target="_blank" rel="external">http://ylc88.github.io</a></p>
+<p>配置完之后重启网络服务 </p>
+<blockquote>
+<p>service network restart   </p>
+</blockquote>
+<p>如果网络没有连上 reboot重启</p>
+<p>安装ifconfig</p>
+<blockquote>
+<p>yum install -y net-tools*</p>
+</blockquote>
+<p>安装完之后 ifconfig查看网卡信息，发现只有一个有线网卡enp8s0和一个回路lo<br>查啊查，发现要NetworkManager服务没有开，泪奔</p>
+<blockquote>
+<p>service NetworkManager start</p>
+</blockquote>
+<p>启动服务，终于多出了一块无线网卡，以防万一，确保此网卡接口启动执行命令</p>
+<blockquote>
+<p>sudo ip link set wlan0 up</p>
+</blockquote>
+<p>扫描附近的无线网络</p>
+<blockquote>
+<p>sudo iw dev wlan0 scan | less </p>
+</blockquote>
+<p>连接没有加密的网络</p>
+<blockquote>
+<p>sudo iw dev wlan0 connect [网络 SSID]</p>
+</blockquote>
+<p>连接没有加密的网络wep加密网络</p>
+<blockquote>
+<p>sudo iw dev wlan0 connect [网络 SSID] key 0:[WEP 密钥]</p>
+</blockquote>
+<p>连接WPA或WPA2协议的话比较麻烦，需要修改/etc/wpasupplicant/wpa_supplicant.conf文件，增加如下行</p>
+<blockquote>
+<p>network={    ssid=”[网络 ssid]”    psk=”[密码]”    priority=1}</p>
+</blockquote>
+<p>配置文件修改完成后</p>
+<blockquote>
+<p>sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf</p>
+</blockquote>
+<p>获取 IP 地址</p>
+<blockquote>
+<p>sudo dhcpcd wlan0</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -129,7 +158,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
+  <a class="article-category-link" href="/categories/Linux/">Linux</a>
 </div>
 
 
@@ -139,7 +168,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/07/25/studio解决gradle和sdk更新问题/" data-title="Android Studio解决gradle和sdk更新问题 | yanlc的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/07/26/centos连接无线网/" data-title="Centos连接无线网 | yanlc的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -152,19 +181,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/26/centos连接无线网/" title="Centos连接无线网">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Centos连接无线网</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/24/博客之旅/"  title="开启博客之旅">
+<a href="/2015/07/25/studio解决gradle和sdk更新问题/"  title="Android Studio解决gradle和sdk更新问题">
  <strong>下一篇：</strong><br/> 
- <span>开启博客之旅
+ <span>Android Studio解决gradle和sdk更新问题
 </span>
 </a>
 </div>
@@ -173,7 +194,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/25/studio解决gradle和sdk更新问题/" data-title="Android Studio解决gradle和sdk更新问题" data-url="http://yoursite.com/2015/07/25/studio解决gradle和sdk更新问题/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/26/centos连接无线网/" data-title="Centos连接无线网" data-url="http://yoursite.com/2015/07/26/centos连接无线网/"></div>
 </section>
 
 
@@ -183,7 +204,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Host"><span class="toc-number">1.</span> <span class="toc-text">Host</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDK国内镜像站"><span class="toc-number">2.</span> <span class="toc-text">SDK国内镜像站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#红杏翻墙"><span class="toc-number">3.</span> <span class="toc-text">红杏翻墙</span></a></li></ol>
+ 
  
   </div>
 
