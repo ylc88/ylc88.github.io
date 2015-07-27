@@ -129,11 +129,19 @@
 </blockquote>
 <p>连接WPA或WPA2协议的话比较麻烦，需要修改/etc/wpasupplicant/wpa_supplicant.conf文件，增加如下行</p>
 <blockquote>
-<p>network={    ssid=”[网络 ssid]”    psk=”[密码]”    priority=1}</p>
+<p>network={<br>           ssid=”网络 ssid”<br>       psk=”密码”<br>       priority=1<br>      }</p>
 </blockquote>
 <p>配置文件修改完成后</p>
 <blockquote>
 <p>sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf</p>
+</blockquote>
+<p>这里发现了冲突，google了一下发现wpa_supplicant和NetworkManager不能同时启动，否则会冲突，只能关闭NetworkManager</p>
+<blockquote>
+<p>service NetworkManager stop</p>
+</blockquote>
+<p>然后在</p>
+<blockquote>
+<p>sudo ip link set wlan0 up<br>开启无线网卡</p>
 </blockquote>
 <p>获取 IP 地址</p>
 <blockquote>

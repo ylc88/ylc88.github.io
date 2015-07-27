@@ -21,7 +21,7 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 <meta property="og:description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
 
 cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
-<meta property="og:updated_time" content="2015-07-26T05:23:13.160Z">
+<meta property="og:updated_time" content="2015-07-27T01:43:26.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos连接无线网">
 <meta name="twitter:description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
@@ -141,11 +141,19 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 </blockquote>
 <p>连接WPA或WPA2协议的话比较麻烦，需要修改/etc/wpasupplicant/wpa_supplicant.conf文件，增加如下行</p>
 <blockquote>
-<p>network={    ssid=”[网络 ssid]”    psk=”[密码]”    priority=1}</p>
+<p>network={<br>           ssid=”网络 ssid”<br>       psk=”密码”<br>       priority=1<br>      }</p>
 </blockquote>
 <p>配置文件修改完成后</p>
 <blockquote>
 <p>sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf</p>
+</blockquote>
+<p>这里发现了冲突，google了一下发现wpa_supplicant和NetworkManager不能同时启动，否则会冲突，只能关闭NetworkManager</p>
+<blockquote>
+<p>service NetworkManager stop</p>
+</blockquote>
+<p>然后在</p>
+<blockquote>
+<p>sudo ip link set wlan0 up<br>开启无线网卡</p>
 </blockquote>
 <p>获取 IP 地址</p>
 <blockquote>
