@@ -4,26 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>hexo 命令 | yanlc的博客</title>
+    <title>Studio导入github中开源项目 | yanlc的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yanlc">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="github是全球最大的代码托管网站，里面有大量的高质量的开源项目源码，作为一名android开发的码农，学习github上面的优秀代码是很有必要的。现在github上面大部分的android项目已经都是用gradle构建的Android Studio项目，由于gradle和Android studio更新的速度比较快，很多项目的gradle版本都不同，这就为项目导入带来了很多困扰，出现大量问题,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 命令">
-<meta property="og:url" content="http://yoursite.com/2015/07/24/hello-world/index.html">
+<meta property="og:title" content="Studio导入github中开源项目">
+<meta property="og:url" content="http://yoursite.com/2015/07/27/Studio导入github中开源项目/index.html">
 <meta property="og:site_name" content="yanlc的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-07-24T09:00:32.572Z">
+<meta property="og:description" content="github是全球最大的代码托管网站，里面有大量的高质量的开源项目源码，作为一名android开发的码农，学习github上面的优秀代码是很有必要的。现在github上面大部分的android项目已经都是用gradle构建的Android Studio项目，由于gradle和Android studio更新的速度比较快，很多项目的gradle版本都不同，这就为项目导入带来了很多困扰，出现大量问题,">
+<meta property="og:image" content="http://7xkmon.com1.z0.glb.clouddn.com/}7EHC4B4]][AIWRD(6}PATB.png">
+<meta property="og:image" content="http://7xkmon.com1.z0.glb.clouddn.com/OGW0%25L[~P)81VP]GGL]7H7S.jpg">
+<meta property="og:image" content="http://7xkmon.com1.z0.glb.clouddn.com/(_`_S{3DVOGY3UZGF[SN1BN.png">
+<meta property="og:image" content="http://7xkmon.com1.z0.glb.clouddn.com/N1Y3KM5)H_`{$O7TQ%25FRS2B.png">
+<meta property="og:updated_time" content="2015-07-27T07:36:46.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 命令">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Studio导入github中开源项目">
+<meta name="twitter:description" content="github是全球最大的代码托管网站，里面有大量的高质量的开源项目源码，作为一名android开发的码农，学习github上面的优秀代码是很有必要的。现在github上面大部分的android项目已经都是用gradle构建的Android Studio项目，由于gradle和Android studio更新的速度比较快，很多项目的gradle版本都不同，这就为项目导入带来了很多困扰，出现大量问题,">
 
     
     <link rel="alternative" href="/atom.xml" title="yanlc的博客" type="application/atom+xml">
@@ -83,14 +84,14 @@ Quick">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/24/hello-world/" title="hexo 命令" itemprop="url">hexo 命令</a>
+      <a href="/2015/07/27/Studio导入github中开源项目/" title="Studio导入github中开源项目" itemprop="url">Studio导入github中开源项目</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-24T04:45:11.000Z" itemprop="datePublished"> 发表于 2015-07-24</time>
+    <time datetime="2015-07-27T05:23:01.000Z" itemprop="datePublished"> 发表于 2015-07-27</time>
     
   </p>
 </header>
@@ -99,19 +100,28 @@ Quick">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步"><span class="toc-number">1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步"><span class="toc-number">2.</span> <span class="toc-text">第二步</span></a></li></ol>
 		
 		</div>
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p>github是全球最大的代码托管网站，里面有大量的高质量的开源项目源码，作为一名android开发的码农，学习github上面的优秀代码是很有必要的。现在github上面大部分的android项目已经都是用gradle构建的Android Studio项目，由于gradle和Android studio更新的速度比较快，很多项目的gradle版本都不同，这就为项目导入带来了很多困扰，出现大量问题,接下来我们来解决这些问题</p>
+<h3 id="第一步">第一步</h3><p>下载一个github的android开源项目,这里我选择的是fresco的使用demo,Fresco是Facebook最新推出的一款用于Android应用中展示图片的强大图片库，可以从网络、本地存储和本地资源中加载图片,为了节省数据和CPU，它拥有三级缓存,而当图片从屏幕上消失时，会自动释放图片所占的内存.是一个非常棒的图片库<br><img src="http://7xkmon.com1.z0.glb.clouddn.com/}7EHC4B4]][AIWRD(6}PATB.png" alt="" width="400px"><br>git clone <a href="https://github.com/liaohuqiu/fresco-demo-for-gradle.git" target="_blank" rel="external">https://github.com/liaohuqiu/fresco-demo-for-gradle.git</a> 下载到本地，我们来看一下他的目录<br><img src="http://7xkmon.com1.z0.glb.clouddn.com/OGW0%25L[~P)81VP]GGL]7H7S.jpg" alt="" width="400px"><br>源码有了，在导入项目之前我们需要修改一下配置文件</p>
+<h3 id="第二步">第二步</h3><p>1，如果项目的gradle的版本与本地gradle环境的版本不同，在导入项目之后，Android Studio会下载项目gradle的版本，国内的下载速度可想而知，不翻墙的话，速度是非常慢的甚至下载失败，所以首先修改根目录里面的gradle版本下载链接</p>
+<blockquote>
+<p>项目根目录gradle-&gt;wrapper-&gt;gradle-wrapper.properties</p>
+</blockquote>
+<p>内容是</p>
+<blockquote>
+<p>distributionBase=GRADLE_USER_HOME<br>distributionPath=wrapper/dists<br>zipStoreBase=GRADLE_USER_HOME<br>zipStorePath=wrapper/dists<br>distributionUrl=https\://services.gradle.org/distributions/gradle-2.2.1-all.zip</p>
+</blockquote>
+<p>修改最后一行gradle-2.2.1-all.zip与本地gradle版本一致，不清楚的可以在Android Studio中新建一个project查看里面的gradle-wrapper.properties文件<br>2，修改根目录中的build.gradle<br><img src="http://7xkmon.com1.z0.glb.clouddn.com/(_`_S{3DVOGY3UZGF[SN1BN.png" alt="" width="400px"></p>
+<p>修改classpath “com.android.tools.build:gradle:${ANDROID_GRADLE_PLUGIN_VERSION}”与本地版本一致，这个项目的版本号ANDROID_GRADLE_PLUGIN_VERSION在根目录的gradle.properties下面，修改它与本地一致，不知道版本号的可以新建项目查看里面的配置</p>
+<p>3，修改samples-&gt;comparison下面的build.gradle内容<br><img src="http://7xkmon.com1.z0.glb.clouddn.com/N1Y3KM5)H_`{$O7TQ%25FRS2B.png" alt="" width="400px"></p>
+<p>修改sdk编译版本等版本与本地一致</p>
+<blockquote>
+<p>minSdkVersion 9<br>targetSdkVersion 21<br>minSdkVersion 9<br>targetSdkVersion 21<br>这些都可以查看Android Studio新建项目中的信息进行修改</p>
+</blockquote>
+<p>4，导入项目，如果没有设置翻墙代理什么的话，可能还会出现一些依赖库下载不下来的问题，这里可以按照我<a href="http://ylc88.github.io/2015/07/25/studio%E8%A7%A3%E5%86%B3gradle%E5%92%8Csdk%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/" target="_blank" rel="external">上一篇博客</a>设置一下代理</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -119,7 +129,7 @@ Quick">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  <a class="article-category-link" href="/categories/Android-Studio/">Android Studio</a>
 </div>
 
 
@@ -129,7 +139,7 @@ Quick">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/07/24/hello-world/" data-title="hexo 命令 | yanlc的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/07/27/Studio导入github中开源项目/" data-title="Studio导入github中开源项目 | yanlc的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -142,20 +152,20 @@ Quick">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/24/博客之旅/" title="开启博客之旅">
-  <strong>上一篇：</strong><br/>
-  <span>
-  开启博客之旅</span>
+
+<div class="next">
+<a href="/2015/07/26/centos连接无线网/"  title="Centos连接无线网">
+ <strong>下一篇：</strong><br/> 
+ <span>Centos连接无线网
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/24/hello-world/" data-title="hexo 命令" data-url="http://yoursite.com/2015/07/24/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/27/Studio导入github中开源项目/" data-title="Studio导入github中开源项目" data-url="http://yoursite.com/2015/07/27/Studio导入github中开源项目/"></div>
 </section>
 
 
@@ -165,7 +175,7 @@ Quick">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步"><span class="toc-number">1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步"><span class="toc-number">2.</span> <span class="toc-text">第二步</span></a></li></ol>
  
   </div>
 
