@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Centos连接无线网 | yanlc的博客</title>
+    <title>vpn服务搭建 | yanlc的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yanlc">
     
 
     
-    <meta name="description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
+    <meta name="description" content="刚刚鼓捣出来一台vps，先搭建一个vpn，节省一下vpn开支，vps是centos 6.5 64位系统，查了一下vpn的一键搭建脚本找到一个非常好用，一键搭建成功，脚本：
 
-cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
+#!/bin/bash function installVPN(){ echo “begin to install VPN services”; #check wether vps suppot ppp and tun yum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos连接无线网">
-<meta property="og:url" content="http://yoursite.com/2015/07/26/centos连接无线网/index.html">
+<meta property="og:title" content="vpn服务搭建">
+<meta property="og:url" content="http://yoursite.com/2015/07/28/vpn服务搭建/index.html">
 <meta property="og:site_name" content="yanlc的博客">
-<meta property="og:description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
+<meta property="og:description" content="刚刚鼓捣出来一台vps，先搭建一个vpn，节省一下vpn开支，vps是centos 6.5 64位系统，查了一下vpn的一键搭建脚本找到一个非常好用，一键搭建成功，脚本：
 
-cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
-<meta property="og:updated_time" content="2015-07-27T01:43:26.384Z">
+#!/bin/bash function installVPN(){ echo “begin to install VPN services”; #check wether vps suppot ppp and tun yum">
+<meta property="og:updated_time" content="2015-07-28T05:44:57.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos连接无线网">
-<meta name="twitter:description" content="今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络
+<meta name="twitter:title" content="vpn服务搭建">
+<meta name="twitter:description" content="刚刚鼓捣出来一台vps，先搭建一个vpn，节省一下vpn开支，vps是centos 6.5 64位系统，查了一下vpn的一键搭建脚本找到一个非常好用，一键搭建成功，脚本：
 
-cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容HWADDR=00:0C:29:8D:24:73TYPE=EthernetBOOTPROTO=static  #启用静态IP地址DEFROUT">
+#!/bin/bash function installVPN(){ echo “begin to install VPN services”; #check wether vps suppot ppp and tun yum">
 
     
     <link rel="alternative" href="/atom.xml" title="yanlc的博客" type="application/atom+xml">
@@ -86,14 +86,14 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/26/centos连接无线网/" title="Centos连接无线网" itemprop="url">Centos连接无线网</a>
+      <a href="/2015/07/28/vpn服务搭建/" title="vpn服务搭建" itemprop="url">vpn服务搭建</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-26T04:45:11.000Z" itemprop="datePublished"> 发表于 2015-07-26</time>
+    <time datetime="2015-07-28T05:33:25.000Z" itemprop="datePublished"> 发表于 2015-07-28</time>
     
   </p>
 </header>
@@ -106,59 +106,28 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 		
 		</div>
 		
-		<p>今天将一台老电脑装了Centos系统，安装完之后是命令行界面，由于安装的时候没有配置网络环境，ifconfig命令没有需要从新装，首先配置有限网络</p>
+		<p>刚刚鼓捣出来一台vps，先搭建一个vpn，节省一下vpn开支，vps是centos 6.5 64位系统，查了一下vpn的一键搭建脚本找到一个非常好用，一键搭建成功，脚本：</p>
 <blockquote>
-<p>cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑内容<br>HWADDR=00:0C:29:8D:24:73<br>TYPE=Ethernet<br>BOOTPROTO=static  #启用静态IP地址<br>DEFROUTE=yes<br>PEERDNS=yes<br>PEERROUTES=yes<br>IPV4_FAILURE_FATAL=no<br>IPV6INIT=yes<br>IPV6_AUTOCONF=yes<br>IPV6_DEFROUTE=yes<br>IPV6_PEERDNS=yes<br>IPV6_PEERROUTES=yes<br>IPV6_FAILURE_FATAL=no<br>NAME=eno16777736<br>UUID=ae0965e7-22b9-45aa-8ec9-3f0a20a85d11<br>ONBOOT=yes  #开启自动启用网络连接<br>IPADDR0=192.168.0.168  #设置IP地址<br>PREFIXO0=24  #设置子网掩码   不要设置 255.255.255.0<br>GATEWAY0=192.168.0.1  #设置网关<br>DNS1=8.8.8.8  #设置主DNS，不要设置自己所在区的dns，我配置过，不行<br>DNS2=8.8.4.4  #设置备DNS</p>
+<p>#!/bin/bash<br> function installVPN(){<br> echo “begin to install VPN services”;<br> #check wether vps suppot ppp and tun<br> yum remove -y pptpd ppp<br> iptables —flush POSTROUTING —table nat<br> iptables —flush FORWARD<br> rm -rf /etc/pptpd.conf<br> rm -rf /etc/ppp<br> arch=<code>uname -m</code><br> wget <a href="http://www.hi-vps.com/downloads/dkms-2.0.17.5-1.noarch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/dkms-2.0.17.5-1.noarch.rpm</a><br> wget <a href="http://wty.name/linux/sources/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm" target="_blank" rel="external">http://wty.name/linux/sources/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm</a><br> wget <a href="http://www.hi-vps.com/downloads/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm</a><br> wget <a href="http://www.hi-vps.com/downloads/pptpd-1.3.4-2.el6.$arch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/pptpd-1.3.4-2.el6.$arch.rpm</a><br> wget <a href="http://www.hi-vps.com/downloads/ppp-2.4.5-17.0.rhel6.$arch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/ppp-2.4.5-17.0.rhel6.$arch.rpm</a> IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br> yum -y install make libpcap iptables gcc-c++ logrotate tar cpio perl pam tcp_wrappers<br> rpm -ivh dkms-2.0.17.5-1.noarch.rpm<br> rpm -ivh kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm<br> rpm -qa kernel_ppp_mppe<br> rpm -Uvh ppp-2.4.5-17.0.rhel6.$arch.rpm<br> rpm -ivh pptpd-1.3.4-2.el6.$arch.rpm<br> mknod /dev/ppp c 108 0<br> echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br> echo “mknod /dev/ppp c 108 0” &gt;&gt; /etc/rc.local<br> echo “echo 1 &gt; /proc/sys/net/ipv4/ip_forward” &gt;&gt; /etc/rc.local<br> echo “localip 172.16.36.1” &gt;&gt; /etc/pptpd.conf<br> echo “remoteip 172.16.36.2-254” &gt;&gt; /etc/pptpd.conf<br> echo “ms-dns 8.8.8.8” &gt;&gt; /etc/ppp/options.pptpd<br> echo “ms-dns 8.8.4.4” &gt;&gt; /etc/ppp/options.pptpd<br> pass=<code>openssl rand 6 -base64</code><br> if [ “$1” != “” ]<br> then pass=$1<br> fi Linux学习，http:// linux.it.net.cn<br> echo “vpn pptpd ${pass} <em>“ &gt;&gt; /etc/ppp/chap-secrets IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br> iptables -t nat -A POSTROUTING -s 172.16.36.0/24 -j SNAT —to-source <code>ifconfig  | grep &#39;inet addr:&#39;| grep -v &#39;127.0.0.1&#39; | cut -d: -f2 | awk &#39;NR==1 { print $1}&#39;</code><br> iptables -A FORWARD -p tcp —syn -s 172.16.36.0/24 -j TCPMSS —set-mss 1356<br> service iptables save<br> chkconfig iptables on<br> chkconfig pptpd on<br> service iptables start<br> service pptpd start<br> echo “VPN service is installed, your VPN username is vpn, VPN password is ${pass}”<br>} IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br>function repaireVPN(){<br> echo “begin to repaire VPN”;<br> mknod /dev/ppp c 108 0<br> service iptables restart<br> service pptpd start<br>}<br>function addVPNuser(){<br> echo “input user name:”<br> read username<br> echo “input password:”<br> read userpassword<br> echo “${username} pptpd ${userpassword} </em>“ &gt;&gt; /etc/ppp/chap-secrets<br> service iptables restart<br> service pptpd start<br>} IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br>echo “which do you want to?input the number.”<br>echo “1. install VPN service”<br>echo “2. repaire VPN service”<br>echo “3. add VPN user”<br>read num<br>case “$num” in<br>[1] ) (installVPN);;<br>[2] ) (repaireVPN);;<br>[3] ) (addVPNuser);;<br>*) echo “nothing,exit”;;<br>esac</p>
 </blockquote>
-<p>配置完之后重启网络服务 </p>
+<p>下载脚本,加权限，执行</p>
 <blockquote>
-<p>service network restart   </p>
+<p>wget <a href="http://www.pztai.com/vpn.sh" target="_blank" rel="external">http://www.pztai.com/vpn.sh</a><br> chmod a+x vpn.sh<br> ./vpn.sh </p>
 </blockquote>
-<p>如果网络没有连上 reboot重启</p>
-<p>安装ifconfig</p>
+<p>会出现选项,选1安装即可</p>
 <blockquote>
-<p>yum install -y net-tools*</p>
+<p>which do you want to?input the number.</p>
+<ol>
+<li>install VPN service —安装</li>
+<li>repaire VPN service —修复</li>
+<li>add VPN user —增加新用户</li>
+</ol>
 </blockquote>
-<p>安装完之后 ifconfig查看网卡信息，发现只有一个有线网卡enp8s0和一个回路lo<br>查啊查，发现要NetworkManager服务没有开，泪奔</p>
+<p> 如果不出问题的话，安装会正常进行，但是现在vpn还不能使用，我们要在防火墙中放开1723端口</p>
 <blockquote>
-<p>service NetworkManager start</p>
+<p>iptables -A INPUT -m state —state NEW -m tcp -p tcp —dport 1723 -j ACCEPT<br>service iptables save<br>service iptables restart</p>
 </blockquote>
-<p>启动服务，终于多出了一块无线网卡，以防万一，确保此网卡接口启动执行命令</p>
-<blockquote>
-<p>sudo ip link set wlan0 up</p>
-</blockquote>
-<p>扫描附近的无线网络</p>
-<blockquote>
-<p>sudo iw dev wlan0 scan | less </p>
-</blockquote>
-<p>连接没有加密的网络</p>
-<blockquote>
-<p>sudo iw dev wlan0 connect [网络 SSID]</p>
-</blockquote>
-<p>连接没有加密的网络wep加密网络</p>
-<blockquote>
-<p>sudo iw dev wlan0 connect [网络 SSID] key 0:[WEP 密钥]</p>
-</blockquote>
-<p>连接WPA或WPA2协议的话比较麻烦，需要修改/etc/wpasupplicant/wpa_supplicant.conf文件，增加如下行</p>
-<blockquote>
-<p>network={<br>           ssid=”网络 ssid”<br>       psk=”密码”<br>       priority=1<br>      }</p>
-</blockquote>
-<p>配置文件修改完成后</p>
-<blockquote>
-<p>sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf</p>
-</blockquote>
-<p>这里发现了冲突，google了一下发现wpa_supplicant和NetworkManager不能同时启动，否则会冲突，只能关闭NetworkManager</p>
-<blockquote>
-<p>service NetworkManager stop</p>
-</blockquote>
-<p>然后在</p>
-<blockquote>
-<p>sudo ip link set wlan0 up<br>开启无线网卡</p>
-</blockquote>
-<p>获取 IP 地址</p>
-<blockquote>
-<p>sudo dhcpcd wlan0</p>
-</blockquote>
+<p>重启pptpd服务<br>pptpd restart</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -166,7 +135,7 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  <a class="article-category-link" href="/categories/vpn/">vpn</a>
 </div>
 
 
@@ -176,7 +145,7 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/07/26/centos连接无线网/" data-title="Centos连接无线网 | yanlc的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/07/28/vpn服务搭建/" data-title="vpn服务搭建 | yanlc的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -189,19 +158,11 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/27/Studio导入github中开源项目/" title="Studio导入github中开源项目">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Studio导入github中开源项目</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/25/studio解决gradle和sdk更新问题/"  title="Android Studio解决gradle和sdk更新问题">
+<a href="/2015/07/27/Studio导入github中开源项目/"  title="Studio导入github中开源项目">
  <strong>下一篇：</strong><br/> 
- <span>Android Studio解决gradle和sdk更新问题
+ <span>Studio导入github中开源项目
 </span>
 </a>
 </div>
@@ -210,7 +171,7 @@ cd  /etc/sysconfig/network-scripts/ 用vi打开里面的第一个文件，编辑
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/26/centos连接无线网/" data-title="Centos连接无线网" data-url="http://yoursite.com/2015/07/26/centos连接无线网/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/28/vpn服务搭建/" data-title="vpn服务搭建" data-url="http://yoursite.com/2015/07/28/vpn服务搭建/"></div>
 </section>
 
 

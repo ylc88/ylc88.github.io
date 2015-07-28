@@ -81,6 +81,85 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/07/28/vpn服务搭建/" title="vpn服务搭建" itemprop="url">vpn服务搭建</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-28T05:33:25.000Z" itemprop="datePublished"> 发表于 2015-07-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>刚刚鼓捣出来一台vps，先搭建一个vpn，节省一下vpn开支，vps是centos 6.5 64位系统，查了一下vpn的一键搭建脚本找到一个非常好用，一键搭建成功，脚本：</p>
+<blockquote>
+<p>#!/bin/bash<br> function installVPN(){<br> echo “begin to install VPN services”;<br> #check wether vps suppot ppp and tun<br> yum remove -y pptpd ppp<br> iptables —flush POSTROUTING —table nat<br> iptables —flush FORWARD<br> rm -rf /etc/pptpd.conf<br> rm -rf /etc/ppp<br> arch=<code>uname -m</code><br> wget <a href="http://www.hi-vps.com/downloads/dkms-2.0.17.5-1.noarch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/dkms-2.0.17.5-1.noarch.rpm</a><br> wget <a href="http://wty.name/linux/sources/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm" target="_blank" rel="external">http://wty.name/linux/sources/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm</a><br> wget <a href="http://www.hi-vps.com/downloads/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm</a><br> wget <a href="http://www.hi-vps.com/downloads/pptpd-1.3.4-2.el6.$arch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/pptpd-1.3.4-2.el6.$arch.rpm</a><br> wget <a href="http://www.hi-vps.com/downloads/ppp-2.4.5-17.0.rhel6.$arch.rpm" target="_blank" rel="external">http://www.hi-vps.com/downloads/ppp-2.4.5-17.0.rhel6.$arch.rpm</a> IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br> yum -y install make libpcap iptables gcc-c++ logrotate tar cpio perl pam tcp_wrappers<br> rpm -ivh dkms-2.0.17.5-1.noarch.rpm<br> rpm -ivh kernel_ppp_mppe-1.0.2-3dkms.noarch.rpm<br> rpm -qa kernel_ppp_mppe<br> rpm -Uvh ppp-2.4.5-17.0.rhel6.$arch.rpm<br> rpm -ivh pptpd-1.3.4-2.el6.$arch.rpm<br> mknod /dev/ppp c 108 0<br> echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br> echo “mknod /dev/ppp c 108 0” &gt;&gt; /etc/rc.local<br> echo “echo 1 &gt; /proc/sys/net/ipv4/ip_forward” &gt;&gt; /etc/rc.local<br> echo “localip 172.16.36.1” &gt;&gt; /etc/pptpd.conf<br> echo “remoteip 172.16.36.2-254” &gt;&gt; /etc/pptpd.conf<br> echo “ms-dns 8.8.8.8” &gt;&gt; /etc/ppp/options.pptpd<br> echo “ms-dns 8.8.4.4” &gt;&gt; /etc/ppp/options.pptpd<br> pass=<code>openssl rand 6 -base64</code><br> if [ “$1” != “” ]<br> then pass=$1<br> fi Linux学习，http:// linux.it.net.cn<br> echo “vpn pptpd ${pass} <em>“ &gt;&gt; /etc/ppp/chap-secrets IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br> iptables -t nat -A POSTROUTING -s 172.16.36.0/24 -j SNAT —to-source <code>ifconfig  | grep &#39;inet addr:&#39;| grep -v &#39;127.0.0.1&#39; | cut -d: -f2 | awk &#39;NR==1 { print $1}&#39;</code><br> iptables -A FORWARD -p tcp —syn -s 172.16.36.0/24 -j TCPMSS —set-mss 1356<br> service iptables save<br> chkconfig iptables on<br> chkconfig pptpd on<br> service iptables start<br> service pptpd start<br> echo “VPN service is installed, your VPN username is vpn, VPN password is ${pass}”<br>} IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br>function repaireVPN(){<br> echo “begin to repaire VPN”;<br> mknod /dev/ppp c 108 0<br> service iptables restart<br> service pptpd start<br>}<br>function addVPNuser(){<br> echo “input user name:”<br> read username<br> echo “input password:”<br> read userpassword<br> echo “${username} pptpd ${userpassword} </em>“ &gt;&gt; /etc/ppp/chap-secrets<br> service iptables restart<br> service pptpd start<br>} IT网，<a href="http://www.it.net.cn" target="_blank" rel="external">http://www.it.net.cn</a><br>echo “which do you want to?input the number.”<br>echo “1. install VPN service”<br>echo “2. repaire VPN service”<br>echo “3. add VPN user”<br>read num<br>case “$num” in<br>[1] ) (installVPN);;<br>[2] ) (repaireVPN);;<br>[3] ) (addVPNuser);;<br>*) echo “nothing,exit”;;<br>esac</p>
+</blockquote>
+<p>下载脚本,加权限，执行</p>
+<blockquote>
+<p>wget <a href="http://www.pztai.com/vpn.sh" target="_blank" rel="external">http://www.pztai.com/vpn.sh</a><br> chmod a+x vpn.sh<br> ./vpn.sh </p>
+</blockquote>
+<p>会出现选项,选1安装即可</p>
+<blockquote>
+<p>which do you want to?input the number.</p>
+<ol>
+<li>install VPN service —安装</li>
+<li>repaire VPN service —修复</li>
+<li>add VPN user —增加新用户</li>
+</ol>
+</blockquote>
+<p> 如果不出问题的话，安装会正常进行，但是现在vpn还不能使用，我们要在防火墙中放开1723端口</p>
+<blockquote>
+<p>iptables -A INPUT -m state —state NEW -m tcp -p tcp —dport 1723 -j ACCEPT<br>service iptables save<br>service iptables restart</p>
+</blockquote>
+<p>重启pptpd服务<br>pptpd restart</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/vpn/">vpn</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/07/28/vpn服务搭建/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/28/vpn服务搭建/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/07/27/Studio导入github中开源项目/" title="Studio导入github中开源项目" itemprop="url">Studio导入github中开源项目</a>
   </h1>
   <p class="article-author">By
@@ -485,6 +564,10 @@
 		
 		  
 			<li><a href="/categories/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/vpn/" title="vpn">vpn<sup>1</sup></a></li>
 		  
 		
 		  
