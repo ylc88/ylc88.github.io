@@ -81,6 +81,162 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/08/31/IS多线程编程/" title="IOS多线程编程" itemprop="url">IOS多线程编程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
+		
+  <p class="article-time">
+    <time datetime="2015-08-31T05:43:36.000Z" itemprop="datePublished"> 发表于 2015-08-31</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>IOS有三种多线程使用方式</p>
+<h3 id="NSThread">NSThread</h3><p>NSThread是轻量级的封装层次比较低的，所以需要自己管理线程生命周期、线程同步<br>创建NSThread<br>+ (void)detachNewThreadSelector:(SEL)aSelector toTarget:(id)aTarget withObject:(id)anArgument<br>- (id)initWithTarget:(id)target selector:(SEL)selector object:(id)argument<br>参数 target selector消息发送对象 selector 线程要执行的方法 argument传输给target的参数 </p>
+<blockquote>
+<p>1、[NSThread detachNewThreadSelector:@selector(doSomething:) toTarget:self withObject:nil];<br>2、NSThread* myThread = [[NSThread alloc] initWithTarget:self selector:@selector(doSomething:) object:nil];<br>[myThread start]; </p>
+</blockquote>
+<p>第一种方式会直接创建线程并且开始运行线程，第二种方式是先创建线程对象，然后在start这个和java的线程操作就很像了</p>
+<p>NSObject也提供了两种线程操作<br>1、- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg<br>创建一个线程在子线程执行，aSelector代表了新创建的线程，arg是传入的参数<br>2、- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;<br>该方法的作用是在主线程中，执行制定的方法（代码块）<br>NSObject类的performSelectorOnMainThread和performSelectorInBackground可以实现简单的多线程编程技术 </p>
+<h3 id="NSOperation">NSOperation</h3><p>使用NSOperation有三种使用方式<br>1，使用它的子类NSInvocationOperation</p>
+<blockquote>
+<p>NSInvocationOperation *operation=[[NSInvocationOperation alloc]initWithTarget:self selector:@selector(test) object:nil];<br> [operation start];<br>2，使用子类NSBlockOperation</p>
+</blockquote>
+<pre><code>NSBlockOperation *operation=[NSBlockOperation <span class="string">blockOperationWithBlock:</span>^{
+  <span class="comment">//......</span>
+}];
+
+[operation <span class="string">addExecutionBlock:</span>^{
+      <span class="comment">//....</span>
+ }];
+[operation start];
+</code></pre><p>上面的调用start都是同步执行的，可以使用将operation添加到NSOperationQueue中进行异步执行<br>      NSOperationQueue * queue=[[NSOperationQueue alloc]init];<br>      //把操作添加到队列中<br>      //第一种方式<br>      [queue addOperation:operation1];<br>      [queue addOperation:operation2];<br>      [queue addOperation:operation3];<br>      //第二种方式<br>      [queue addOperationWithBlock:^{<br>         NSLog(@”NSBlockOperation3—4——%@”,[NSThread currentThread]);<br>      }];</p>
+<p>3，自定义NSOperation，这种方法和java中的runnable非常相似<br> 第一步新建一个类继承NSoperation<br> 第二步实现main方法，main方法就是写自己的线程逻辑和java的run方法一样</p>
+<h3 id="GCD">GCD</h3><p> GCD是苹果公司为多核的并行运算提出的解决方案,会自动利用更多的CPU内核（比如双核、四核）会自动管理线程的生命周期（创建线程、调度任务、销毁线程）</p>
+<blockquote>
+<p>//  后台执行：<br> dispatch_async(dispatch_get_global_queue(0, 0), ^{<br>      // something<br> });<br> // 主线程执行：<br> dispatch_async(dispatch_get_main_queue(), ^{<br>      // something<br> });<br> // 一次性执行：<br> static dispatch_once_t onceToken;<br> dispatch_once(&amp;onceToken, ^{<br>     // code to be executed once<br> });<br> // 延迟2秒执行：<br> double delayInSeconds = 2.0;<br> dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);<br> dispatch_after(popTime, dispatch_get_main_queue(), ^(void){<br>     // code to be executed on the main queue after delay<br> });<br> // 自定义dispatch_queue_t<br> dispatch_queue_t urls_queue = dispatch_queue_create(“blog.devtang.com”, NULL);<br> dispatch_async(urls_queue, ^{<br>　 　// your code<br> });<br> dispatch_release(urls_queue);<br> // 合并汇总结果<br> dispatch_group_t group = dispatch_group_create();<br> dispatch_group_async(group, dispatch_get_global_queue(0,0), ^{<br>      // 并行执行的线程一<br> });<br> dispatch_group_async(group, dispatch_get_global_queue(0,0), ^{<br>      // 并行执行的线程二<br> });<br> dispatch_group_notify(group, dispatch_get_global_queue(0,0), ^{<br>      // 汇总结果<br> });</p>
+</blockquote>
+<p>GCD的另一个用处是可以让程序在后台较长久的运行。<br>在没有使用GCD时，当app被按home键退出后，app仅有最多5秒钟的时候做一些保存或清理资源的工作。但是在使用GCD后，app最多有10分钟的时间在后台长久运行。这个时间可以用来做清理本地缓存，发送统计数据等工作。让程序在后台长久运行的示例代码如下：</p>
+<blockquote>
+<p>// AppDelegate.h文件<br>   @property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;<br>// AppDelegate.m文件<br>- (void)applicationDidEnterBackground:(UIApplication *)application<br>{<br>    [self beingBackgroundUpdateTask];<br>    // 在这里加上你需要长久运行的代码<br>    [self endBackgroundUpdateTask];<br>}<br>- (void)beingBackgroundUpdateTask<br>{<br>    self.backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{<br>        [self endBackgroundUpdateTask];<br>    }];<br>}<br>- (void)endBackgroundUpdateTask<br>{<br>    [[UIApplication sharedApplication] endBackgroundTask: self.backgroundUpdateTask];<br>    self.backgroundUpdateTask = UIBackgroundTaskInvalid;<br>}</p>
+</blockquote>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/IOS/">IOS</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/08/31/IS多线程编程/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/31/IS多线程编程/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/31/php常用函数/" title="php常用函数" itemprop="url">php常用函数</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-31T04:31:38.000Z" itemprop="datePublished"> 发表于 2015-07-31</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>$<em>SERVER[‘SCRIPT<em>NAME’] 返回/mantis/test.php，相对路径；<br>__FILE</em></em> 返回文件的绝对路径D:\Projects\mantis\test.php<br>$_SERVER[‘HTTP_X_FORWARDED_PROTO’]<br>$_SERVER[‘HTTPS’]<br>$_SERVER[‘SERVER_PORT’]<br>$_SERVER[“REQUEST_URI”]   URI 用来指定要访问的页面<br>$_SERVER[‘SERVER_NAME’] 当前脚本所在服务器的主机名<br>$_SERVER[‘HTTP_HOST’] 域名<br>$_SERVER[‘SERVER_ADDR’] 当前脚本所在服务器的IP地址<br>$_SERVER[‘SERVER_SOFTWARE’] 服务器信息<br>$_SERVER[‘LOCAL_ADDR’] IIS7上用来获取服务器IP地址<br>$_SERVER[‘REMOTE_ADDR’] 浏览器用户的IP地址</p>
+<p>$GLOBALS一个包含了全部变量的全局组合数组。变量的名字就是数组的键。<br>explode 使用一个字符串分割另一个字符串 返回一个字符串数组<br>spilt 使用一个正册分割字符<br>函数原型：array split (string $pattern, string $string [, int $limit])<br>函数原型：array explode ( string $separator, string $string [, int $limit]) </p>
+<p>isset — 检测变量是否设置 isset()只能用于变量，因为传递任何其它参数都将造成解析错误。若想检测常量是否已设置，可使用 defined() 函数<br>unset — 释放给定的变量</p>
+<p>trim去除字符串首尾处的空白字符<br>strlen()返回字符串的长度<br>str_replace<br>str_replace( “\0”, ‘’, $t_self ) 将t_self中的\0替换成“”<br>substr_replace()<br>mix substr_replace ( mixed string, string replacement, int start [, int length] )<br>strpos — 查找在字符串中首次出现的位置<br>strrpos() - 计算指定字符串在目标字符串中最后一次出现的位置<br>stripos() - 查找字符串首次出现的位置（不区分大小写）<br>strripos() - 计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）<br>strrchr() - 查找指定字符在字符串中的最后一次出现<br>substr() - 返回字符串的子串<br>stristr() - strstr 函数的忽略大小写版本<br>strstr() - 查找字符串的首次出现 string strstr ( string $haystack , mixed $needle [, bool $before_needle = false ] ) before_needle true返回字符串之前部分</p>
+<p>strtolower() 将大写字母转换为小写字母<br>substr(string string ,int start [int length]) 返回从start指定位置开始的长度的字符串</p>
+<p>implode 使用一个字符将数组元素链接成字符串<br>$csv = implode(“,”, $record); </p>
+<p>basename 返回文件名部分<br>dirname 返回目录部分<br>file_exists 检查文件或目录存不存在<br>method_exists 检测方法是否存在<br>fopen()打开指定的文件或URL</p>
+<p>krsort — 对数组按照键名逆向排序<br>set_time_limit()设置脚本最大执行时间<br>time() 返回当前的unix时间戳<br>is_string()判断变量是不是字符串<br>is_bool<br>is_Inteter<br>is_float<br>is_object检测变量是否是一个对象<br>strtotime —  将任何英文文本的日期时间描述解析为 UNIX 时间戳</p>
+<p>feof()判断文件指针是否在末尾<br>fgets()从文件指针中读取一行</p>
+<p>realpath 返回规范化的绝对路径名<br>DIRECTORY_SEPARATOR 操作系统目录分隔符<br>PATH_SEPARATOR 在linux系统中是一个” : “号,Windows上是一个”;”号<br>set_include_path 设置incldue_path<br>get_include_path 获取当前include_path</p>
+<p>count() 返回数组长度，非数组返回1<br>array_pad — 用值将数组填补到指定长度<br>memory_get_usage()返回分配给PHP的内存量<br>spl_autoload_register 注册__autoload()函数<br>ob_get_contents() Return the contents of the output buffer</p>
+<p>extension_loaded(‘zlib’)找出扩展是否被加载<br>ini_get 返回php.ini中配置项的值<br>ini_set 设置php.ini中配置项的值 ,ini_set(“memory_limit”,’256M’); 只在脚本执行期间生效，脚本执行完成该值重置<br>PHP_EOL PHP行结束符<br>preg_replace 执行一个正则表达式的替换<br>preg_match(string pattern, string subject [, array matches [, int flags]]) — 进行正则表达式匹配<br>htmlspecialchars  Convert special characters to HTML entities</p>
+<p>ceil() 进一法取整<br>floor() 舍去法取整<br>round()四舍五入法</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/php/">php</a>
+</div>
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/07/31/php常用函数/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/31/php常用函数/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/07/28/vpn服务搭建/" title="vpn服务搭建" itemprop="url">vpn服务搭建</a>
   </h1>
   <p class="article-author">By
@@ -559,11 +715,19 @@
 		  
 		
 		  
+			<li><a href="/categories/IOS/" title="IOS">IOS<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/Linux/" title="Linux">Linux<sup>1</sup></a></li>
 		  
 		
 		  
 			<li><a href="/categories/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>1</sup></a></li>
 		  
 		
 		  
@@ -635,6 +799,24 @@
           <li>
             
             	<a href="http://segmentfault.com/a/1190000000375848" target="_blank" title="国内开源镜像站">国内开源镜像站</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://codekk.com/open-source-project-analysis" target="_blank" title="codeKK源码解析">codeKK源码解析</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://minxiaoming.com/" target="_blank" title="仿最美应用">仿最美应用</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.isming.me/page/3/" target="_blank" title="blog博客">blog博客</a>
             
           </li>
         
