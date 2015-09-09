@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>php常用函数 | yanlc的博客</title>
+    <title>IOS基础-UIApplication | yanlc的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yanlc">
     
 
     
-    <meta name="description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
+    <meta name="description" content="UIApplication，代表的是整个应用做的事，因此每个程序只能有一个，系统使用的是单例模式，就是上面的[UIApplication sharedApplication]来得到一个实例。这个单例实例是在系统启动时由main函数里面的UIApplicationMain方法生成，就是每个程序里都有的AppDelegate，它实现了UIApplicationDelegate的Protocol，也就是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php常用函数">
-<meta property="og:url" content="http://yoursite.com/2015/07/31/php常用函数/index.html">
+<meta property="og:title" content="IOS基础-UIApplication">
+<meta property="og:url" content="http://yoursite.com/2015/09/09/IOS基础-UIApplication/index.html">
 <meta property="og:site_name" content="yanlc的博客">
-<meta property="og:description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
-<meta property="og:updated_time" content="2015-08-31T05:48:04.812Z">
+<meta property="og:description" content="UIApplication，代表的是整个应用做的事，因此每个程序只能有一个，系统使用的是单例模式，就是上面的[UIApplication sharedApplication]来得到一个实例。这个单例实例是在系统启动时由main函数里面的UIApplicationMain方法生成，就是每个程序里都有的AppDelegate，它实现了UIApplicationDelegate的Protocol，也就是">
+<meta property="og:updated_time" content="2015-09-09T09:15:55.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php常用函数">
-<meta name="twitter:description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
+<meta name="twitter:title" content="IOS基础-UIApplication">
+<meta name="twitter:description" content="UIApplication，代表的是整个应用做的事，因此每个程序只能有一个，系统使用的是单例模式，就是上面的[UIApplication sharedApplication]来得到一个实例。这个单例实例是在系统启动时由main函数里面的UIApplicationMain方法生成，就是每个程序里都有的AppDelegate，它实现了UIApplicationDelegate的Protocol，也就是">
 
     
     <link rel="alternative" href="/atom.xml" title="yanlc的博客" type="application/atom+xml">
@@ -80,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/31/php常用函数/" title="php常用函数" itemprop="url">php常用函数</a>
+      <a href="/2015/09/09/IOS基础-UIApplication/" title="IOS基础-UIApplication" itemprop="url">IOS基础-UIApplication</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-31T04:31:38.000Z" itemprop="datePublished"> 发表于 2015-07-31</time>
+    <time datetime="2015-09-09T09:13:39.000Z" itemprop="datePublished"> 发表于 2015-09-09</time>
     
   </p>
 </header>
@@ -100,19 +100,13 @@
 		
 		</div>
 		
-		<p>$<em>SERVER[‘SCRIPT<em>NAME’] 返回/mantis/test.php，相对路径；<br>__FILE</em></em> 返回文件的绝对路径D:\Projects\mantis\test.php<br>$_SERVER[‘HTTP_X_FORWARDED_PROTO’]<br>$_SERVER[‘HTTPS’]<br>$_SERVER[‘SERVER_PORT’]<br>$_SERVER[“REQUEST_URI”]   URI 用来指定要访问的页面<br>$_SERVER[‘SERVER_NAME’] 当前脚本所在服务器的主机名<br>$_SERVER[‘HTTP_HOST’] 域名<br>$_SERVER[‘SERVER_ADDR’] 当前脚本所在服务器的IP地址<br>$_SERVER[‘SERVER_SOFTWARE’] 服务器信息<br>$_SERVER[‘LOCAL_ADDR’] IIS7上用来获取服务器IP地址<br>$_SERVER[‘REMOTE_ADDR’] 浏览器用户的IP地址</p>
-<p>$GLOBALS一个包含了全部变量的全局组合数组。变量的名字就是数组的键。<br>explode 使用一个字符串分割另一个字符串 返回一个字符串数组<br>spilt 使用一个正册分割字符<br>函数原型：array split (string $pattern, string $string [, int $limit])<br>函数原型：array explode ( string $separator, string $string [, int $limit]) </p>
-<p>isset — 检测变量是否设置 isset()只能用于变量，因为传递任何其它参数都将造成解析错误。若想检测常量是否已设置，可使用 defined() 函数<br>unset — 释放给定的变量</p>
-<p>trim去除字符串首尾处的空白字符<br>strlen()返回字符串的长度<br>str_replace<br>str_replace( “\0”, ‘’, $t_self ) 将t_self中的\0替换成“”<br>substr_replace()<br>mix substr_replace ( mixed string, string replacement, int start [, int length] )<br>strpos — 查找在字符串中首次出现的位置<br>strrpos() - 计算指定字符串在目标字符串中最后一次出现的位置<br>stripos() - 查找字符串首次出现的位置（不区分大小写）<br>strripos() - 计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）<br>strrchr() - 查找指定字符在字符串中的最后一次出现<br>substr() - 返回字符串的子串<br>stristr() - strstr 函数的忽略大小写版本<br>strstr() - 查找字符串的首次出现 string strstr ( string $haystack , mixed $needle [, bool $before_needle = false ] ) before_needle true返回字符串之前部分</p>
-<p>strtolower() 将大写字母转换为小写字母<br>substr(string string ,int start [int length]) 返回从start指定位置开始的长度的字符串</p>
-<p>implode 使用一个字符将数组元素链接成字符串<br>$csv = implode(“,”, $record); </p>
-<p>basename 返回文件名部分<br>dirname 返回目录部分<br>file_exists 检查文件或目录存不存在<br>method_exists 检测方法是否存在<br>fopen()打开指定的文件或URL</p>
-<p>krsort — 对数组按照键名逆向排序<br>set_time_limit()设置脚本最大执行时间<br>time() 返回当前的unix时间戳<br>is_string()判断变量是不是字符串<br>is_bool<br>is_Inteter<br>is_float<br>is_object检测变量是否是一个对象<br>strtotime —  将任何英文文本的日期时间描述解析为 UNIX 时间戳</p>
-<p>feof()判断文件指针是否在末尾<br>fgets()从文件指针中读取一行</p>
-<p>realpath 返回规范化的绝对路径名<br>DIRECTORY_SEPARATOR 操作系统目录分隔符<br>PATH_SEPARATOR 在linux系统中是一个” : “号,Windows上是一个”;”号<br>set_include_path 设置incldue_path<br>get_include_path 获取当前include_path</p>
-<p>count() 返回数组长度，非数组返回1<br>array_pad — 用值将数组填补到指定长度<br>memory_get_usage()返回分配给PHP的内存量<br>spl_autoload_register 注册__autoload()函数<br>ob_get_contents() Return the contents of the output buffer</p>
-<p>extension_loaded(‘zlib’)找出扩展是否被加载<br>ini_get 返回php.ini中配置项的值<br>ini_set 设置php.ini中配置项的值 ,ini_set(“memory_limit”,’256M’); 只在脚本执行期间生效，脚本执行完成该值重置<br>PHP_EOL PHP行结束符<br>preg_replace 执行一个正则表达式的替换<br>preg_match(string pattern, string subject [, array matches [, int flags]]) — 进行正则表达式匹配<br>htmlspecialchars  Convert special characters to HTML entities</p>
-<p>ceil() 进一法取整<br>floor() 舍去法取整<br>round()四舍五入法</p>
+		<p>UIApplication，代表的是整个应用做的事，因此每个程序只能有一个，系统使用的是单例模式，就是上面的[UIApplication sharedApplication]来得到一个实例。这个单例实<br>例是在系统启动时由main函数里面的UIApplicationMain方法生成，就是每个程序里都有的AppDelegate，它实现了UIApplicationDelegate的Protocol，也就是AppDelegate的一<br>个实例。每次通过[UIApplication sharedApplication]调用的就是它。<br>UIApplication在程序里的角色：它保存一个UIWindow对象序列，用来快速恢复views<br>UIApplication的核心作用是提供了iOS程序运行期间的控制和协作工作。<br>每一个程序在运行期必须有且仅有一个UIApplication（或则其子类）的一个实例。在程序开始运行的时候，UIApplicationMain函数是程序进入点，这个函数做了很多工作，其中一个重要的工作就是创建一个UIApplication的单例实例。在你的代码中你，你可以通过调用[UIApplication sharedApplication]来得到这个单例实例的指针。<br>UIApplication的一个主要工作是处理用户事件，它会起一个队列，把所有用户事件都放入队列，逐个处理，在处理的时候，它会发送当前事件到一个合适的处理事件的目标控件。此外，UIApplication实例还维护一个在本应用中打开的window列表（UIWindow实例），这样它就可以接触应用中的任何一个UIView对象。UIApplication实例会被赋予一个代理对象，以处理应用程序的生命周期事件（比如程序启动和关闭）、系统事件（比如来电、记事项警告）等等。<br>新建一个任意类型的iOS应用工程，加入我们在Class Prefix输入是TC，我们可以看到工程中生成一个类：<br>TCAppDelegate :UIResponder <uiapplicationdelegate><br>这里这个类的基类是UIResponder，和4.2以前生成的工程是不同的，以前是继承自NSObject。不论如何，本类实现了一个名叫UIApplicationDelegate的接口，这个表明这个类<br>就是这个工程中UIApplication实例的代理类。<br>在main函数中，</uiapplicationdelegate></p>
+<p>@autoreleasepool {<br>       returnUIApplicationMain(argc, argv, nil,NSStringFromClass([TCAppDelegateclass]));<br>    }<br>这里传入了代理类到UIApplicationMain函数中，UIApplicationMain函数在生成唯一个UIApplication的时候就可以把代理类的实例指针告诉这个单例对象了。<br>1、- (void)applicationWillResignActive:(UIApplication <em>)application<br>说明：当应用程序将要入非活动状态执行，在此期间，应用程序不接收消息或事件，比如来电话了<br>2、- (void)applicationDidBecomeActive:(UIApplication </em>)application<br>说明：当应用程序入活动状态执行，这个刚好跟上面那个方法相反<br>3、- (void)applicationDidEnterBackground:(UIApplication <em>)application<br>说明：当程序被推送到后台的时候调用。所以要设置后台继续运行，则在这个函数里面设置即可<br>4、- (void)applicationWillEnterForeground:(UIApplication </em>)application<br>说明：当程序从后台将要重新回到前台时候调用，这个刚好跟上面的那个方法相反。<br>5、- (void)applicationWillTerminate:(UIApplication <em>)application<br>说明：当程序将要退出是被调用，通常是用来保存数据和一些退出前的清理工作。这个需要要设置UIApplicationExitsOnSuspend的键值。<br>6、- (void)applicationDidReceiveMemoryWarning:(UIApplication </em>)application<br>说明：iPhone设备只有有限的内存，如果为应用程序分配了太多内存操作系统会终止应用程序的运行，在终止前会执行这个方法，通常可以在这里进行内存清理工作防止程序被终止<br>7、- (void)applicationSignificantTimeChange:(UIApplication<em>)application<br>说明：当系统时间发生改变时执行<br>8、- (void)applicationDidFinishLaunching:(UIApplication</em>)application<br>说明：当程序载入后执行<br>9、- (void)application:(UIApplication)application willChangeStatusBarFrame:(CGRect)newStatusBarFrame<br>说明：当StatusBar框将要变化时执行<br>10、- (void)application:(UIApplication<em>)application willChangeStatusBarOrientation:<br>(UIInterfaceOrientation)newStatusBarOrientation<br>duration:(NSTimeInterval)duration<br>说明：当StatusBar框方向将要变化时执行<br>11、- (BOOL)application:(UIApplication</em>)application handleOpenURL:(NSURL<em>)url<br>说明：当通过url执行<br>12、- (void)application:(UIApplication</em>)application didChangeStatusBarOrientation:(UIInterfaceOrientation)oldStatusBarOrientation<br>说明：当StatusBar框方向变化完成后执行<br>13、- (void)application:(UIApplication*)application didChangeSetStatusBarFrame:(CGRect)oldStatusBarFrame<br>说明：当StatusBar框变化完成后执行</p>
+<p>iPhone中的应用程序很容易受到打扰，比如一个来电可能导致应用程序失去焦点，如果这个时候接听了电话，那么应用程序会转到后台运行。还有很多其它类似的事件会导致<br>iPhone应用程序失去焦点，在应用程序失去焦点前会调用委托类的applicationWillResignActive()方法，而应用程序再次获取到焦点的时候会调用<br>applicationDidBecomeActive()方法。比如在运行应用程序的时候锁屏会调用委托类的applicationWillResignActive()方法，而当屏幕被解锁的时候，又会调用<br>applicationDidBecomeActive()方法。</p>
+<p>另外一个非常重要的方法就是applicationDidReceiveMemoryWarning()，因为iPhone设备只有有限的内存，如果为应用程序分配了太多内存操作系统会终止应用程序的运行，但<br>在终止之前操作系统会通过先调用委托类的applicationDidReceiveMemoryWarning()方法警告应用程序，在UIApplication接收到这个事件后它会传递给委托类的<br>applicationDidReceiveMemoryWarning()方法，委托类在这个方法内可以进行释放内存的操作以防止操作系统强制终止应用程序的运行。<br>下面是这个类的一些功能：<br>UIApplication还可以远程提醒，就是push notification注册；<br>可以连接到UIUndoManager；<br>检查能否打开某个URL，并且打开URL；这个功能可以配合应用的自定义URL功能，来检测是否安装了某个应用。比如检测是否安装了淘宝的应用，可以用下面的代码：</p>
+<p>NSURL <em>url = [NSURL URLWithString:[NSString stringWithFormat:@”taobao://item.taobao.com/item.htm?id=12688928896”]];<br>// 判断当前系统是否有安装淘宝客户端<br>    if ([[UIApplication sharedApplication] canOpenURL:url]) {<br>        // 如果已经安装淘宝客户端，就使用客户端打开链接<br>        [[UIApplication sharedApplication] openURL:url];<br>    }<br>NSURL </em>url = [NSURL URLWithString:[NSString stringWithFormat:@”taobao://item.taobao.com/item.htm?id=12688928896”]];<br>// 判断当前系统是否有安装淘宝客户端<br>    if ([[UIApplication sharedApplication] canOpenURL:url]) {<br>        // 如果已经安装淘宝客户端，就使用客户端打开链接<br>        [[UIApplication sharedApplication] openURL:url];<br>    }</p>
+<p>1.设置icon上的数字图标<br>    //设置主界面icon上的数字图标，在2.0中引进， 缺省为0<br>    [UIApplication sharedApplication].applicationIconBadgeNumber = 4;<br>2.设置摇动手势的时候，是否支持redo,undo操作<br>    //摇动手势，是否支持redo undo操作。<br>   //3.0以后引进，缺省YES<br>    [UIApplication sharedApplication].applicationSupportsShakeToEdit =YES;<br>3.判断程序运行状态<br>    //判断程序运行状态，在2.0以后引入<br>    /<em><br>     UIApplicationStateActive,<br>     UIApplicationStateInactive,<br>     UIApplicationStateBackground
+     </em>/<br>   if([UIApplication sharedApplication].applicationState == UIApplicationStateInactive){<br>        NSLog(@”程序在运行状态”);<br>    }<br>4.阻止屏幕变暗进入休眠状态<br>    //阻止屏幕变暗，慎重使用,缺省为no 2.0<br>    [UIApplication sharedApplication].idleTimerDisabled = YES;<br>慎重使用本功能，因为非常耗电。<br>5.显示联网状态<br>    //显示联网标记 2.0<br>    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;<br>6.在map上显示一个地址<br>   NSString<em> addressText =@”1 Infinite Loop, Cupertino, CA 95014”;<br>   // URL encode the spaces<br>    addressText =  [addressTextstringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];<br>   NSString</em> urlText = [NSStringstringWithFormat:@”<a href="http://maps.google.com/maps?q=%@" target="_blank" rel="external">http://maps.google.com/maps?q=%@</a>“, addressText];<br>    [[UIApplication sharedApplication]openURL:[NSURLURLWithString:urlText]];<br>7.发送电子邮件<br>   NSString <em>recipients =@”mailto:first@example.com?cc=second@example.com,third@example.com&amp;subject=Hello from California!”;<br>   NSString </em>body =@”&amp;body=It is raining in sunny California!”;<br>    NSString *email = [NSStringstringWithFormat:@”%@%@”, recipients, body];<br>    email = [emailstringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];<br>    [[UIApplication sharedApplication]openURL:[NSURLURLWithString:email]];<br>8.打电话到一个号码<br>    // Call Google 411<br>    [[UIApplication sharedApplication]openURL:[NSURLURLWithString:@”tel://8004664411”]];<br>9.发送短信<br>    // Text to Google SMS<br>    [[UIApplication sharedApplication]openURL:[NSURLURLWithString:@”sms://466453”]];<br>10.打开一个网址<br>   // Lanuch any iPhone developers fav site<br>    [[UIApplication sharedApplication]openURL:[NSURLURLWithString:@”<a href="http://itunesconnect.apple.com" target="_blank" rel="external">http://itunesconnect.apple.com</a>“]];</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,7 +114,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/php/">php</a>
+  <a class="article-category-link" href="/categories/IOS/">IOS</a>
 </div>
 
 
@@ -130,7 +124,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/07/31/php常用函数/" data-title="php常用函数 | yanlc的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/09/09/IOS基础-UIApplication/" data-title="IOS基础-UIApplication | yanlc的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -143,19 +137,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/08/31/IS多线程编程/" title="IOS多线程编程">
-  <strong>上一篇：</strong><br/>
-  <span>
-  IOS多线程编程</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/28/vpn服务搭建/"  title="vpn服务搭建">
+<a href="/2015/09/09/IOS基础-UIWindow/"  title="IOS基础-UIWindow和UIView">
  <strong>下一篇：</strong><br/> 
- <span>vpn服务搭建
+ <span>IOS基础-UIWindow和UIView
 </span>
 </a>
 </div>
@@ -164,7 +150,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/31/php常用函数/" data-title="php常用函数" data-url="http://yoursite.com/2015/07/31/php常用函数/"></div>
+	<div class="ds-thread" data-thread-key="2015/09/09/IOS基础-UIApplication/" data-title="IOS基础-UIApplication" data-url="http://yoursite.com/2015/09/09/IOS基础-UIApplication/"></div>
 </section>
 
 
