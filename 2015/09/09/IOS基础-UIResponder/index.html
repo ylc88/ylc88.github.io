@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>php常用函数 | yanlc的博客</title>
+    <title>IOS基础-UIResponder | yanlc的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yanlc">
     
 
     
-    <meta name="description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
+    <meta name="description" content="UIResponder继承自NSOBject，而IOS中几乎所有界面上的对象都是继承自UIResponder，例如UIView、UIViewController从这张图中我们可以清楚的看出它的树形结构，也可以看出UIResponder在整个IOS体系中起着非常重要的作用UIResponder类定义了对象相应和控制事件的接口，界面的所有事件都是通过UIResponder来完成的最新版本的iOS中有三">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php常用函数">
-<meta property="og:url" content="http://yoursite.com/2015/07/31/php常用函数/index.html">
+<meta property="og:title" content="IOS基础-UIResponder">
+<meta property="og:url" content="http://yoursite.com/2015/09/09/IOS基础-UIResponder/index.html">
 <meta property="og:site_name" content="yanlc的博客">
-<meta property="og:description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
-<meta property="og:updated_time" content="2015-08-31T05:48:04.812Z">
+<meta property="og:description" content="UIResponder继承自NSOBject，而IOS中几乎所有界面上的对象都是继承自UIResponder，例如UIView、UIViewController从这张图中我们可以清楚的看出它的树形结构，也可以看出UIResponder在整个IOS体系中起着非常重要的作用UIResponder类定义了对象相应和控制事件的接口，界面的所有事件都是通过UIResponder来完成的最新版本的iOS中有三">
+<meta property="og:image" content="http://7xkmon.com1.z0.glb.clouddn.com/20150409084600097.jpg">
+<meta property="og:updated_time" content="2015-09-09T07:00:09.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php常用函数">
-<meta name="twitter:description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
+<meta name="twitter:title" content="IOS基础-UIResponder">
+<meta name="twitter:description" content="UIResponder继承自NSOBject，而IOS中几乎所有界面上的对象都是继承自UIResponder，例如UIView、UIViewController从这张图中我们可以清楚的看出它的树形结构，也可以看出UIResponder在整个IOS体系中起着非常重要的作用UIResponder类定义了对象相应和控制事件的接口，界面的所有事件都是通过UIResponder来完成的最新版本的iOS中有三">
 
     
     <link rel="alternative" href="/atom.xml" title="yanlc的博客" type="application/atom+xml">
@@ -80,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/31/php常用函数/" title="php常用函数" itemprop="url">php常用函数</a>
+      <a href="/2015/09/09/IOS基础-UIResponder/" title="IOS基础-UIResponder" itemprop="url">IOS基础-UIResponder</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-31T04:31:38.000Z" itemprop="datePublished"> 发表于 2015-07-31</time>
+    <time datetime="2015-09-09T06:18:52.000Z" itemprop="datePublished"> 发表于 2015-09-09</time>
     
   </p>
 </header>
@@ -100,19 +101,8 @@
 		
 		</div>
 		
-		<p>$<em>SERVER[‘SCRIPT<em>NAME’] 返回/mantis/test.php，相对路径；<br>__FILE</em></em> 返回文件的绝对路径D:\Projects\mantis\test.php<br>$_SERVER[‘HTTP_X_FORWARDED_PROTO’]<br>$_SERVER[‘HTTPS’]<br>$_SERVER[‘SERVER_PORT’]<br>$_SERVER[“REQUEST_URI”]   URI 用来指定要访问的页面<br>$_SERVER[‘SERVER_NAME’] 当前脚本所在服务器的主机名<br>$_SERVER[‘HTTP_HOST’] 域名<br>$_SERVER[‘SERVER_ADDR’] 当前脚本所在服务器的IP地址<br>$_SERVER[‘SERVER_SOFTWARE’] 服务器信息<br>$_SERVER[‘LOCAL_ADDR’] IIS7上用来获取服务器IP地址<br>$_SERVER[‘REMOTE_ADDR’] 浏览器用户的IP地址</p>
-<p>$GLOBALS一个包含了全部变量的全局组合数组。变量的名字就是数组的键。<br>explode 使用一个字符串分割另一个字符串 返回一个字符串数组<br>spilt 使用一个正册分割字符<br>函数原型：array split (string $pattern, string $string [, int $limit])<br>函数原型：array explode ( string $separator, string $string [, int $limit]) </p>
-<p>isset — 检测变量是否设置 isset()只能用于变量，因为传递任何其它参数都将造成解析错误。若想检测常量是否已设置，可使用 defined() 函数<br>unset — 释放给定的变量</p>
-<p>trim去除字符串首尾处的空白字符<br>strlen()返回字符串的长度<br>str_replace<br>str_replace( “\0”, ‘’, $t_self ) 将t_self中的\0替换成“”<br>substr_replace()<br>mix substr_replace ( mixed string, string replacement, int start [, int length] )<br>strpos — 查找在字符串中首次出现的位置<br>strrpos() - 计算指定字符串在目标字符串中最后一次出现的位置<br>stripos() - 查找字符串首次出现的位置（不区分大小写）<br>strripos() - 计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）<br>strrchr() - 查找指定字符在字符串中的最后一次出现<br>substr() - 返回字符串的子串<br>stristr() - strstr 函数的忽略大小写版本<br>strstr() - 查找字符串的首次出现 string strstr ( string $haystack , mixed $needle [, bool $before_needle = false ] ) before_needle true返回字符串之前部分</p>
-<p>strtolower() 将大写字母转换为小写字母<br>substr(string string ,int start [int length]) 返回从start指定位置开始的长度的字符串</p>
-<p>implode 使用一个字符将数组元素链接成字符串<br>$csv = implode(“,”, $record); </p>
-<p>basename 返回文件名部分<br>dirname 返回目录部分<br>file_exists 检查文件或目录存不存在<br>method_exists 检测方法是否存在<br>fopen()打开指定的文件或URL</p>
-<p>krsort — 对数组按照键名逆向排序<br>set_time_limit()设置脚本最大执行时间<br>time() 返回当前的unix时间戳<br>is_string()判断变量是不是字符串<br>is_bool<br>is_Inteter<br>is_float<br>is_object检测变量是否是一个对象<br>strtotime —  将任何英文文本的日期时间描述解析为 UNIX 时间戳</p>
-<p>feof()判断文件指针是否在末尾<br>fgets()从文件指针中读取一行</p>
-<p>realpath 返回规范化的绝对路径名<br>DIRECTORY_SEPARATOR 操作系统目录分隔符<br>PATH_SEPARATOR 在linux系统中是一个” : “号,Windows上是一个”;”号<br>set_include_path 设置incldue_path<br>get_include_path 获取当前include_path</p>
-<p>count() 返回数组长度，非数组返回1<br>array_pad — 用值将数组填补到指定长度<br>memory_get_usage()返回分配给PHP的内存量<br>spl_autoload_register 注册__autoload()函数<br>ob_get_contents() Return the contents of the output buffer</p>
-<p>extension_loaded(‘zlib’)找出扩展是否被加载<br>ini_get 返回php.ini中配置项的值<br>ini_set 设置php.ini中配置项的值 ,ini_set(“memory_limit”,’256M’); 只在脚本执行期间生效，脚本执行完成该值重置<br>PHP_EOL PHP行结束符<br>preg_replace 执行一个正则表达式的替换<br>preg_match(string pattern, string subject [, array matches [, int flags]]) — 进行正则表达式匹配<br>htmlspecialchars  Convert special characters to HTML entities</p>
-<p>ceil() 进一法取整<br>floor() 舍去法取整<br>round()四舍五入法</p>
+		<p>UIResponder继承自NSOBject，而IOS中几乎所有界面上的对象都是继承自UIResponder，例如UIView、UIViewController<br><img src="http://7xkmon.com1.z0.glb.clouddn.com/20150409084600097.jpg" alt="" width="400px"><br>从这张图中我们可以清楚的看出它的树形结构，也可以看出UIResponder在整个IOS体系中起着非常重要的作用<br>UIResponder类定义了对象相应和控制事件的接口，界面的所有事件都是通过UIResponder来完成的<br>最新版本的iOS中有三种类型事件：触摸事件,motion事件,Remote 控制事件</p>
+<p>只要手指触摸屏幕，滑动，从屏幕离开，系统都会产生UIEvent对象类型的事件—-当然包括UITouch事件<br>– touchesBegan:withEvent:   当用户触摸到屏幕时调用方法<br>– touchesMoved:withEvent:  当用户触摸到屏幕并移动时调用此方法<br>– touchesEnded:withEvent:  当触摸离开屏幕时调用此方法<br>– touchesCancelled:withEvent:  当触摸被取消时调用此方法</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,7 +110,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/php/">php</a>
+  <a class="article-category-link" href="/categories/IOS/">IOS</a>
 </div>
 
 
@@ -130,7 +120,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/07/31/php常用函数/" data-title="php常用函数 | yanlc的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/09/09/IOS基础-UIResponder/" data-title="IOS基础-UIResponder | yanlc的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -144,18 +134,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/08/31/IS多线程编程/" title="IOS多线程编程">
+ <a href="/2015/09/09/IOS基础-UIScreen/" title="IOS基础-UIScreen">
   <strong>上一篇：</strong><br/>
   <span>
-  IOS多线程编程</span>
+  IOS基础-UIScreen</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/07/28/vpn服务搭建/"  title="vpn服务搭建">
+<a href="/2015/08/31/IS多线程编程/"  title="IOS多线程编程">
  <strong>下一篇：</strong><br/> 
- <span>vpn服务搭建
+ <span>IOS多线程编程
 </span>
 </a>
 </div>
@@ -164,7 +154,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/31/php常用函数/" data-title="php常用函数" data-url="http://yoursite.com/2015/07/31/php常用函数/"></div>
+	<div class="ds-thread" data-thread-key="2015/09/09/IOS基础-UIResponder/" data-title="IOS基础-UIResponder" data-url="http://yoursite.com/2015/09/09/IOS基础-UIResponder/"></div>
 </section>
 
 

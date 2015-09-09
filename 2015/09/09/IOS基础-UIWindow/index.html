@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>php常用函数 | yanlc的博客</title>
+    <title>IOS基础-UIWindow和UIView | yanlc的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yanlc">
     
 
     
-    <meta name="description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
+    <meta name="description" content="UIWindow1.UIWindow继承自UIView， 虽说UIWindow 继承于UiView， 但这个 UIWindow 也是一个重中之重的View。 这里，打个比方： UIWindow 虽说也是个View，但它是一个首席View。UIWindow对象是所有UIView的根，管理和协调的应用程序的显示UIWindow类是UIView的子类，可以看作是特殊的UIView。一般应用程序只有一个U">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php常用函数">
-<meta property="og:url" content="http://yoursite.com/2015/07/31/php常用函数/index.html">
+<meta property="og:title" content="IOS基础-UIWindow和UIView">
+<meta property="og:url" content="http://yoursite.com/2015/09/09/IOS基础-UIWindow/index.html">
 <meta property="og:site_name" content="yanlc的博客">
-<meta property="og:description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
-<meta property="og:updated_time" content="2015-08-31T05:48:04.812Z">
+<meta property="og:description" content="UIWindow1.UIWindow继承自UIView， 虽说UIWindow 继承于UiView， 但这个 UIWindow 也是一个重中之重的View。 这里，打个比方： UIWindow 虽说也是个View，但它是一个首席View。UIWindow对象是所有UIView的根，管理和协调的应用程序的显示UIWindow类是UIView的子类，可以看作是特殊的UIView。一般应用程序只有一个U">
+<meta property="og:updated_time" content="2015-09-09T09:10:32.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php常用函数">
-<meta name="twitter:description" content="$SERVER[‘SCRIPTNAME’] 返回/mantis/test.php，相对路径；__FILE 返回文件的绝对路径D:\Projects\mantis\test.php$_SERVER[‘HTTP_X_FORWARDED_PROTO’]$_SERVER[‘HTTPS’]$_SERVER[‘SERVER_PORT’]$_SERVER[“REQUEST_URI”]   URI 用来指定要访问">
+<meta name="twitter:title" content="IOS基础-UIWindow和UIView">
+<meta name="twitter:description" content="UIWindow1.UIWindow继承自UIView， 虽说UIWindow 继承于UiView， 但这个 UIWindow 也是一个重中之重的View。 这里，打个比方： UIWindow 虽说也是个View，但它是一个首席View。UIWindow对象是所有UIView的根，管理和协调的应用程序的显示UIWindow类是UIView的子类，可以看作是特殊的UIView。一般应用程序只有一个U">
 
     
     <link rel="alternative" href="/atom.xml" title="yanlc的博客" type="application/atom+xml">
@@ -80,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/31/php常用函数/" title="php常用函数" itemprop="url">php常用函数</a>
+      <a href="/2015/09/09/IOS基础-UIWindow/" title="IOS基础-UIWindow和UIView" itemprop="url">IOS基础-UIWindow和UIView</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yanlc" target="_blank" itemprop="author">yanlc</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-31T04:31:38.000Z" itemprop="datePublished"> 发表于 2015-07-31</time>
+    <time datetime="2015-09-09T08:21:31.000Z" itemprop="datePublished"> 发表于 2015-09-09</time>
     
   </p>
 </header>
@@ -96,23 +96,37 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIWindow"><span class="toc-number">1.</span> <span class="toc-text">UIWindow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIView"><span class="toc-number">2.</span> <span class="toc-text">UIView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIView常用属性"><span class="toc-number">3.</span> <span class="toc-text">UIView常用属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIView的常用方法："><span class="toc-number">4.</span> <span class="toc-text">UIView的常用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非常常用的三个结构体，和界面打交道就少不了他们三"><span class="toc-number">5.</span> <span class="toc-text">非常常用的三个结构体，和界面打交道就少不了他们三</span></a></li></ol>
 		
 		</div>
 		
-		<p>$<em>SERVER[‘SCRIPT<em>NAME’] 返回/mantis/test.php，相对路径；<br>__FILE</em></em> 返回文件的绝对路径D:\Projects\mantis\test.php<br>$_SERVER[‘HTTP_X_FORWARDED_PROTO’]<br>$_SERVER[‘HTTPS’]<br>$_SERVER[‘SERVER_PORT’]<br>$_SERVER[“REQUEST_URI”]   URI 用来指定要访问的页面<br>$_SERVER[‘SERVER_NAME’] 当前脚本所在服务器的主机名<br>$_SERVER[‘HTTP_HOST’] 域名<br>$_SERVER[‘SERVER_ADDR’] 当前脚本所在服务器的IP地址<br>$_SERVER[‘SERVER_SOFTWARE’] 服务器信息<br>$_SERVER[‘LOCAL_ADDR’] IIS7上用来获取服务器IP地址<br>$_SERVER[‘REMOTE_ADDR’] 浏览器用户的IP地址</p>
-<p>$GLOBALS一个包含了全部变量的全局组合数组。变量的名字就是数组的键。<br>explode 使用一个字符串分割另一个字符串 返回一个字符串数组<br>spilt 使用一个正册分割字符<br>函数原型：array split (string $pattern, string $string [, int $limit])<br>函数原型：array explode ( string $separator, string $string [, int $limit]) </p>
-<p>isset — 检测变量是否设置 isset()只能用于变量，因为传递任何其它参数都将造成解析错误。若想检测常量是否已设置，可使用 defined() 函数<br>unset — 释放给定的变量</p>
-<p>trim去除字符串首尾处的空白字符<br>strlen()返回字符串的长度<br>str_replace<br>str_replace( “\0”, ‘’, $t_self ) 将t_self中的\0替换成“”<br>substr_replace()<br>mix substr_replace ( mixed string, string replacement, int start [, int length] )<br>strpos — 查找在字符串中首次出现的位置<br>strrpos() - 计算指定字符串在目标字符串中最后一次出现的位置<br>stripos() - 查找字符串首次出现的位置（不区分大小写）<br>strripos() - 计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）<br>strrchr() - 查找指定字符在字符串中的最后一次出现<br>substr() - 返回字符串的子串<br>stristr() - strstr 函数的忽略大小写版本<br>strstr() - 查找字符串的首次出现 string strstr ( string $haystack , mixed $needle [, bool $before_needle = false ] ) before_needle true返回字符串之前部分</p>
-<p>strtolower() 将大写字母转换为小写字母<br>substr(string string ,int start [int length]) 返回从start指定位置开始的长度的字符串</p>
-<p>implode 使用一个字符将数组元素链接成字符串<br>$csv = implode(“,”, $record); </p>
-<p>basename 返回文件名部分<br>dirname 返回目录部分<br>file_exists 检查文件或目录存不存在<br>method_exists 检测方法是否存在<br>fopen()打开指定的文件或URL</p>
-<p>krsort — 对数组按照键名逆向排序<br>set_time_limit()设置脚本最大执行时间<br>time() 返回当前的unix时间戳<br>is_string()判断变量是不是字符串<br>is_bool<br>is_Inteter<br>is_float<br>is_object检测变量是否是一个对象<br>strtotime —  将任何英文文本的日期时间描述解析为 UNIX 时间戳</p>
-<p>feof()判断文件指针是否在末尾<br>fgets()从文件指针中读取一行</p>
-<p>realpath 返回规范化的绝对路径名<br>DIRECTORY_SEPARATOR 操作系统目录分隔符<br>PATH_SEPARATOR 在linux系统中是一个” : “号,Windows上是一个”;”号<br>set_include_path 设置incldue_path<br>get_include_path 获取当前include_path</p>
-<p>count() 返回数组长度，非数组返回1<br>array_pad — 用值将数组填补到指定长度<br>memory_get_usage()返回分配给PHP的内存量<br>spl_autoload_register 注册__autoload()函数<br>ob_get_contents() Return the contents of the output buffer</p>
-<p>extension_loaded(‘zlib’)找出扩展是否被加载<br>ini_get 返回php.ini中配置项的值<br>ini_set 设置php.ini中配置项的值 ,ini_set(“memory_limit”,’256M’); 只在脚本执行期间生效，脚本执行完成该值重置<br>PHP_EOL PHP行结束符<br>preg_replace 执行一个正则表达式的替换<br>preg_match(string pattern, string subject [, array matches [, int flags]]) — 进行正则表达式匹配<br>htmlspecialchars  Convert special characters to HTML entities</p>
-<p>ceil() 进一法取整<br>floor() 舍去法取整<br>round()四舍五入法</p>
+		<h3 id="UIWindow">UIWindow</h3><p>1.UIWindow继承自UIView， 虽说UIWindow 继承于UiView， 但这个 UIWindow 也是一个重中之重的View。 这里，打个比方： UIWindow 虽说也是个View，但它是一个首席View。<br>UIWindow对象是所有UIView的根，管理和协调的应用程序的显示<br>UIWindow类是UIView的子类，可以看作是特殊的UIView。一般应用程序只有一个UIWindow对象，即使有多个UIWindow对象，也只有一个UIWindow可以接受到用户的触屏事件。<br>UIWindow的主要作用：一是提供一个区域来显示UIView，二是将事件（event）的分发给UIView</p>
+<p>AppDelegate.m</p>
+<blockquote>
+<p>-(BOOL)application:(UIApplication<em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions{<br>    self.myWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];<br>    self.myWindow.backgroundColor=[UIColor whiteColor];<br>    self.myWindow.rootViewControl ＝ rootViewControl;<br>    [self.myWindow makeKeyAndVisible];<br>    return YES;<br>}</p>
+</blockquote>
+<p>UIWindowLevel</p>
+<p>UIWindow有三个层级，分别是Normal，StatusBar，Alert。打印输出他们三个这三个层级的值我们发现从左到右依次是0，1000，2000，也就是说Normal级别是最低的，StatusBar处于中等水平，Alert级别最高。</p>
+<p>通常我们的程序的界面都是处于Normal这个级别上的，系统顶部的状态栏应该是处于StatusBar级别，UIActionSheet和UIAlertView这些通常都是用来中断正常流程，提醒用户等操作，因此位于Alert级别。</p>
+<p>KeyWindow</p>
+<p>keyWindow是指定的用来接收键盘以及非触摸类的消息，而且程序中每一个时刻只能有一个window是keyWindow。</p>
+<h3 id="UIView">UIView</h3><p>UIView表示屏幕上的一块矩形区域，它在App中占有绝对重要的地位，因为IOS中几乎所有可视化控件都是UIView的子类。负责渲染区域的内容，并且响应该区域内发生的触摸事件<br>UIVIew中的内容主要要依赖于CALayer，CALayer以后会记录<br>UIView的功能<br>1.管理矩形区域里的内容<br>2.处理矩形区域中的事件<br>3.子视图的管理<br>4.还能实现动画 </p>
+<h3 id="UIView常用属性">UIView常用属性</h3><p>frame： 相对父视图的位置和大小<br>bounds：相对自身的位置和大小，所以bounds的x和y永远为0<br>center：子视图的中点坐标相对父视图的位置<br>transform:可以通过这个属性控制视图的放大缩小和旋转<br>superview：获取父视图<br>subviews：获取所有子视图<br>alpha：视图的透明度（0－1）<br>tag：视图的标志，设置了tag后，可以通过viewWithTag方法拿到这个视图<br>userInteractionEnabled：是否响应用户事件</p>
+<h3 id="UIView的常用方法：">UIView的常用方法：</h3><p>[objc] view plaincopy在CODE上查看代码片派生到我的代码片<br>- (void)removeFromSuperview;将视图从父视图中移除<br>- (void)insertSubview:(UIView *)view atIndex:(NSInteger)index;插入一个视图到指定位置,视图越在下面，index越小<br>- (void)exchangeSubviewAtIndex:(NSInteger)index1 withSubviewAtIndex:(NSInteger)index2;将index1和index2位置的两个视图互换位置  </p>
+<p>- (void)addSubview:(UIView <em>)view;添加视图到父视图<br>- (void)insertSubview:(UIView </em>)view belowSubview:(UIView <em>)siblingSubview;插入视图到指定视图的下面<br>- (void)insertSubview:(UIView </em>)view aboveSubview:(UIView *)siblingSubview;插入视图到指定视图上面  </p>
+<p>- (void)bringSubviewToFront:(UIView <em>)view;把视图移到最顶层<br>- (void)sendSubviewToBack:(UIView </em>)view;把视图移到最底层  </p>
+<p>- (UIView *)viewWithTag:(NSInteger)tag;     根据视图的tag属性找到</p>
+<h3 id="非常常用的三个结构体，和界面打交道就少不了他们三">非常常用的三个结构体，和界面打交道就少不了他们三</h3><ol>
+<li>CGPoint</li>
+</ol>
+<p>struct CGPoint {<br>  CGFloat x;<br>  CGFloat y;<br>};  </p>
+<p>typedef struct CGPoint CGPoint;<br>看到这个想必你已经懂了，不再解释。</p>
+<p>2.CGSize</p>
+<p>struct CGSize {<br>  CGFloat width;<br>  CGFloat height;<br>};  </p>
+<p>typedef struct CGSize CGSize;<br>不解释。</p>
+<p>3.CGRect</p>
+<p>struct CGRect {<br>  CGPoint origin;  //偏移是相对父视图的<br>  CGSize size;<br>};<br>typedef struct CGRect CGRect;</p>
+<p>CGPoint point = CGPointMake(x,y);//左上角坐标的位置<br>CGSize size = CGSizeMake(width,height);//大小<br>CGRect rect = CGRectMake(x,y,width,height);//位置和大小</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,7 +134,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/php/">php</a>
+  <a class="article-category-link" href="/categories/IOS/">IOS</a>
 </div>
 
 
@@ -130,7 +144,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/07/31/php常用函数/" data-title="php常用函数 | yanlc的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/09/09/IOS基础-UIWindow/" data-title="IOS基础-UIWindow和UIView | yanlc的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -143,19 +157,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/08/31/IS多线程编程/" title="IOS多线程编程">
-  <strong>上一篇：</strong><br/>
-  <span>
-  IOS多线程编程</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/28/vpn服务搭建/"  title="vpn服务搭建">
+<a href="/2015/09/09/IOS基础-UIScreen/"  title="IOS基础-UIScreen">
  <strong>下一篇：</strong><br/> 
- <span>vpn服务搭建
+ <span>IOS基础-UIScreen
 </span>
 </a>
 </div>
@@ -164,7 +170,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/31/php常用函数/" data-title="php常用函数" data-url="http://yoursite.com/2015/07/31/php常用函数/"></div>
+	<div class="ds-thread" data-thread-key="2015/09/09/IOS基础-UIWindow/" data-title="IOS基础-UIWindow和UIView" data-url="http://yoursite.com/2015/09/09/IOS基础-UIWindow/"></div>
 </section>
 
 
@@ -174,7 +180,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIWindow"><span class="toc-number">1.</span> <span class="toc-text">UIWindow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIView"><span class="toc-number">2.</span> <span class="toc-text">UIView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIView常用属性"><span class="toc-number">3.</span> <span class="toc-text">UIView常用属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIView的常用方法："><span class="toc-number">4.</span> <span class="toc-text">UIView的常用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非常常用的三个结构体，和界面打交道就少不了他们三"><span class="toc-number">5.</span> <span class="toc-text">非常常用的三个结构体，和界面打交道就少不了他们三</span></a></li></ol>
  
   </div>
 
